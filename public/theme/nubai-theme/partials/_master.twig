@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {%- if record|default and record.title -%}
+                {{- record.title ~ ' | ' -}}
+            {%- endif -%}
+            {{- config.get('general/sitename') -}}
+            {%- if record|default == null and config.has('general/payoff') -%}
+                {{- ' | ' ~ config.get('general/payoff') -}}
+            {%- endif -%}
+        </title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    </head>
+    <body>
+
+        {{ include('partials/_header.twig') }}
+
+        <main class="w3-container w3-white w3-padding-16">
+            {% block body %}
+
+                {% block main %}
+                {% endblock main %}
+
+            {% endblock body %}
+        </main>
+        
+        {% setcontent warning = 'blocks/10' %}
+
+        <div id="menu-modal" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container w3-padding-16">
+                    <span onclick="document.getElementById('menu-modal').style.display = 'none'" class="w3-button w3-display-topright"><i class="fa-solid fa-xmark" style="color: #2c89a0;"></i></span>
+                    <nav>
+                        <h2>Menu</h2>
+                        <ul class="w3-ul">
+                            <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
+                            <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
+                        </ul>
+                    </nav>
+                    <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+                </div>
+            </div>
+        </div>
+
+        {{ include('partials/_footer.twig') }}
+
+    </body>
+</html>

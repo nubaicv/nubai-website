@@ -1,0 +1,16 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+    
+    <h1>{% trans %}list.services.header{% endtrans %}</h1>
+
+    {% if services is iterable %}
+        {% for service in services %}
+            <a href="{{ service|link() }}"><h2>{{ service.title }}</h2></a>
+            <p><img src="{{ service.image|thumbnail(320, 240) }}"></p>
+            {% endfor %}
+        {% else %}
+        <p>Well this is strange!</p>
+    {% endif %}
+
+{%  endblock main %}

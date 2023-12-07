@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="pt-BR">
+  <file id="messages.pt_BR">
+    <unit id="BgEXmtG" name="homepage.service_cards.header">
+      <segment>
+        <source>homepage.service_cards.header</source>
+        <target>Conectividade e segurança cibernética</target>
+      </segment>
+    </unit>
+    <unit id="l9GnTBr" name="error.404">
+      <segment>
+        <source>error.404</source>
+        <target>Erro 404: Conteúdo não encontrado</target>
+      </segment>
+    </unit>
+    <unit id="9qXHdUK" name="link.to.services.page">
+      <segment>
+        <source>link.to.services.page</source>
+        <target>Todos os serviços</target>
+      </segment>
+    </unit>
+    <unit id="GyNiJAi" name="menu.home">
+      <segment>
+        <source>menu.home</source>
+        <target>Iniciar</target>
+      </segment>
+    </unit>
+    <unit id="W1o27Cf" name="menu.services">
+      <segment>
+        <source>menu.services</source>
+        <target>Serviços</target>
+      </segment>
+    </unit>
+    <unit id="VVlJ7hm" name="list.services.header">
+      <segment>
+        <source>list.services.header</source>
+        <target>Lista de serviços</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

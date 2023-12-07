@@ -1,0 +1,10 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+    <h2>{{ service.title }}</h2>
+    <img src="{{ service.image|thumbnail(320, 240) }}">
+    <p>{{ service.body }}</p>
+    <p><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}link.to.services.page{% endtrans %}</a></p>
+
+{% endblock main %}

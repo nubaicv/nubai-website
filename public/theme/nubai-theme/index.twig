@@ -1,0 +1,21 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+    <h1>{% trans %}homepage.service_cards.header{% endtrans %}</h1>
+    <div class="w3-row">
+        {% setcontent services = 'services' orderby 'id' %}
+        {% if services is iterable %}
+            {% for service in services %}
+                <div class="w3-third">
+                    <div class="w3-container w3-padding-16 w3-margin w3-card-4">
+                        <header><a href="{{ service|link() }}"><h2>{{ service.card_title }}</h2></a></header>
+                        <main><p>{{ service.body }}</p></main>
+                        <footer><img alt="image" src="{{ service.image }}" class="w3-image" style="width: 80%" /></footer>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Well this is strange!</p>
+        {% endif %}
+    </div>
+{% endblock main %}
