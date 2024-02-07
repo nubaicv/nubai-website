@@ -38,7 +38,7 @@
         <div id="menu-modal" class="w3-modal">
             <div class="w3-modal-content">
                 <div class="w3-container w3-padding-16">
-                    <span onclick="document.getElementById('menu-modal').style.display = 'none'" class="w3-button w3-display-topright"><i class="fa-solid fa-xmark" style="color: #2c89a0;"></i></span>
+                    <span onclick="close_menu_modal();" class="w3-button w3-display-topright"><i class="fa-solid fa-xmark blue-nubai"></i></span>
                     <nav>
                         <h2>Menu</h2>
                         <ul class="w3-ul">
@@ -52,6 +52,6 @@
         </div>
 
         {{ include('partials/_footer.twig') }}
-
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

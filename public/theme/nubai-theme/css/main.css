@@ -4,7 +4,7 @@ body {
 }
 img.logo {
     display: block;
-    width: 50px;
+    width: 55px;
 }
 h2 {
     font-weight: bold;
@@ -12,7 +12,11 @@ h2 {
     color: #2c89a0;
 }
 body > footer {
-    font-size: 100%;
+    font-size: 90%;
     font-weight: bold;
     color: white;
+}
+
+.blue-nubai {
+    color: #2c89a0;
 }

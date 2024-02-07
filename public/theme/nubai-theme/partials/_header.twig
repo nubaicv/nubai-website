@@ -1,10 +1,17 @@
 <!-- Header -->
-<header class="w3-container w3-padding-16 w3-light-gray">
-    <div>
-        <a href="{{ path('homepage_locale') }}"><img src="{{ asset('nubai-logo2.png', 'files')  }}" alt="logo" title="O nosso logo" class="logo w3-left"></a>
-        <nav class="w3-right">
-            <a href="#" onclick="document.getElementById('menu-modal').style.display = 'block'"><i class="fa-solid fa-bars fa-3x" style="color: #2c89a0;"></i></a>
-        </nav>
-    </div>
+<header class="main-header w3-container w3-padding-16 w3-light-gray">
+    <nav class="w3-bar">
+        <div class="w3-bar-item">
+            <a href="{{ path('homepage_locale') }}"><img src="{{ asset('nubai-logo2.png', 'files')  }}" alt="logo" title="O nosso logo" class="logo"></a>
+        </div>
+        <div class="w3-bar-item w3-bar w3-right">
+            <div class="w3-bar-item">
+                <a href="#"><i class="fa-solid fa-right-to-bracket fa-2x blue-nubai"></i></a>
+            </div>
+            <div class="w3-bar-item">
+                <a href="#" onclick="open_menu_modal();"><i class="fa-solid fa-bars fa-2x blue-nubai"></i></a>
+            </div>
+        </div>
+    </nav>
 </header>
 <!-- End Header -->
