@@ -12,12 +12,20 @@ security:
 
     password_hashers:
         Bolt\Entity\User: auto
+        App\Entity\Customer:
+            algorithm: auto
+
 
     providers:
         database_users:
             entity:
                 class: Bolt\Entity\User
                 property: username
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Customer
+                property: email
 
     firewalls:
         dev:
@@ -26,12 +34,12 @@ security:
         
         api:
             pattern: ^/api
-            http_basic: ~
+            http_basic: { provider: database_users }
         
         main:
             pattern: ^/
             user_checker: Bolt\Security\UserChecker
-            switch_user: { role: CAN_SWITCH_USER }
+            switch_user: { role: CAN_SWITCH_USER, provider: database_users }
             entry_point: Bolt\Security\AuthenticationEntryPointRedirector
 
             custom_authenticators:
