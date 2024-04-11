@@ -37,7 +37,7 @@ security:
             http_basic: { provider: database_users }
         
         main:
-            pattern: ^/
+            pattern: ^%bolt.backend_url%
             user_checker: Bolt\Security\UserChecker
             switch_user: { role: CAN_SWITCH_USER, provider: database_users }
             entry_point: Bolt\Security\AuthenticationEntryPointRedirector
@@ -54,6 +54,9 @@ security:
                 secret: '%kernel.secret%'
                 lifetime: '%bolt.remember_lifetime%'
                 remember_me_parameter: login[remember_me]
+        
+        app:
+            pattern: ^/
 
     access_control:
         # this is a catch-all for the admin area
