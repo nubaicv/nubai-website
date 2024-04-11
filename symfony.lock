@@ -757,6 +757,9 @@
             "config/packages/reset_password.yaml"
         ]
     },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.15.0"
+    },
     "symplify/easy-coding-standard": {
         "version": "8.3.48"
     },

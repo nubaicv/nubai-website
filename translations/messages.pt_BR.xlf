@@ -37,5 +37,17 @@
         <target>Lista de serviços</target>
       </segment>
     </unit>
+    <unit id="588_9PF" name="Password">
+      <segment>
+        <source>Password</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="c1prjRW" name="Agree terms">
+      <segment>
+        <source>Agree terms</source>
+        <target>Agree terms</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -16,7 +16,7 @@
         "symfony/form": "^5.1",
         "symfony/validator": "^5.1",
         "symfonycasts/reset-password-bundle": "*",
-        "symfonycasts/verify-email-bundle": "*"
+        "symfonycasts/verify-email-bundle": "^1.15"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
