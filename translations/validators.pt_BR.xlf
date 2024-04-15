@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="pt-BR">
+  <file id="validators.pt_BR">
+    <unit id="YRKYC4." name="There is already an account with this email">
+      <segment>
+        <source>There is already an account with this email</source>
+        <target>There is already an account with this email</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

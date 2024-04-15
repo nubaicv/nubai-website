@@ -8,7 +8,7 @@ use App\Repository\CustomerRepository;
 use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Bolt\Controller\TwigAwareController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mime\Address;
@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 
-class RegistrationController extends AbstractController
+class RegistrationController extends TwigAwareController
 {
     private EmailVerifier $emailVerifier;
 
@@ -58,7 +58,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('homepage_locale');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('@theme/register.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }

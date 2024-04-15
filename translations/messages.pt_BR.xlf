@@ -49,5 +49,11 @@
         <target>Agree terms</target>
       </segment>
     </unit>
+    <unit id="kQWnsB7" name="Your email address has been verified.">
+      <segment>
+        <source>Your email address has been verified.</source>
+        <target>Your email address has been verified.</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

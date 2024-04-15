@@ -17,12 +17,12 @@ security:
 
 
     providers:
-        database_users:
+        backend_provider:
             entity:
                 class: Bolt\Entity\User
                 property: username
         # used to reload user from session & other features (e.g. switch_user)
-        app_user_provider:
+        frontend_provider:
             entity:
                 class: App\Entity\Customer
                 property: email
@@ -34,12 +34,12 @@ security:
         
         api:
             pattern: ^/api
-            http_basic: { provider: database_users }
+            http_basic: { provider: backend_provider }
         
-        main:
+        backend:
             pattern: ^%bolt.backend_url%
             user_checker: Bolt\Security\UserChecker
-            switch_user: { role: CAN_SWITCH_USER, provider: database_users }
+            switch_user: { role: CAN_SWITCH_USER, provider: backend_provider }
             entry_point: Bolt\Security\AuthenticationEntryPointRedirector
 
             custom_authenticators:
@@ -55,8 +55,20 @@ security:
                 lifetime: '%bolt.remember_lifetime%'
                 remember_me_parameter: login[remember_me]
         
-        app:
+        frontend:
             pattern: ^/
+            custom_authenticator: App\Security\FrontendUserAuthenticator
+            user_checker: App\Security\FrontendUserChecker
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: homepage_locale
+
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800
+                path: /
+                always_remember_me: true
 
     access_control:
         # this is a catch-all for the admin area
