@@ -26,7 +26,7 @@ class RegistrationController extends TwigAwareController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'app_register')]
+    #[Route('/{_locale}/register', name: 'register_nubai')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new Customer();
@@ -46,36 +46,36 @@ class RegistrationController extends TwigAwareController
             $entityManager->flush();
 
             // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
+            $this->emailVerifier->sendEmailConfirmation('verify_email_nubai', $user,
                 (new TemplatedEmail())
                     ->from(new Address('website@nubai.com.cv', 'Nubai Website Bot'))
                     ->to($user->getEmail())
                     ->subject('Please Confirm your Email')
-                    ->htmlTemplate('registration/confirmation_email.html.twig')
+                    ->htmlTemplate('@theme/security/email/confirmation_email.twig')
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('homepage_locale');
+            return $this->redirectToRoute('login_nubai');
         }
 
-        return $this->render('@theme/register.twig', [
+        return $this->render('security/register.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
+    #[Route('/verify/email', name: 'verify_email_nubai')]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator, CustomerRepository $customerRepository): Response
     {
         $id = $request->query->get('id');
 
         if (null === $id) {
-            return $this->redirectToRoute('app_register');
+            return $this->redirectToRoute('register_nubai');
         }
 
         $user = $customerRepository->find($id);
 
         if (null === $user) {
-            return $this->redirectToRoute('app_register');
+            return $this->redirectToRoute('register_nubai');
         }
 
         // validate email confirmation link, sets User::isVerified=true and persists
@@ -84,12 +84,12 @@ class RegistrationController extends TwigAwareController
         } catch (VerifyEmailExceptionInterface $exception) {
             $this->addFlash('verify_email_error', $translator->trans($exception->getReason(), [], 'VerifyEmailBundle'));
 
-            return $this->redirectToRoute('app_register');
+            return $this->redirectToRoute('register_nubai');
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success', 'your.email.address.has.been.verified');
 
-        return $this->redirectToRoute('app_register');
+        return $this->redirectToRoute('login_nubai');
     }
 }

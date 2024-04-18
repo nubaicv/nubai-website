@@ -60,9 +60,9 @@ security:
             custom_authenticator: App\Security\FrontendUserAuthenticator
             user_checker: App\Security\FrontendUserChecker
             logout:
-                path: app_logout
+                path: logout_nubai
                 # where to redirect after logout
-                target: homepage_locale
+                target: login_nubai
 
             remember_me:
                 secret: '%kernel.secret%'

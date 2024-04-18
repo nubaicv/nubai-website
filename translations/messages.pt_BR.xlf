@@ -37,22 +37,34 @@
         <target>Lista de serviços</target>
       </segment>
     </unit>
-    <unit id="588_9PF" name="Password">
+    <unit id="x75Yuy7" name="link.create.new.account">
       <segment>
-        <source>Password</source>
-        <target>Password</target>
+        <source>link.create.new.account</source>
+        <target>Crie uma nova conta</target>
       </segment>
     </unit>
-    <unit id="c1prjRW" name="Agree terms">
+    <unit id="yKuTQ_i" name="button.register">
       <segment>
-        <source>Agree terms</source>
-        <target>Agree terms</target>
+        <source>button.register</source>
+        <target>Regista-te</target>
       </segment>
     </unit>
-    <unit id="kQWnsB7" name="Your email address has been verified.">
+    <unit id="fggGSSV" name="link.go.login.page">
       <segment>
-        <source>Your email address has been verified.</source>
-        <target>Your email address has been verified.</target>
+        <source>link.go.login.page</source>
+        <target>Tens conta? Fazer login</target>
+      </segment>
+    </unit>
+    <unit id="FbqT7gf" name="header.signin.form">
+      <segment>
+        <source>header.signin.form</source>
+        <target>Iniciar sessão</target>
+      </segment>
+    </unit>
+    <unit id="BILIgNL" name="header.register.form">
+      <segment>
+        <source>header.register.form</source>
+        <target>Regista-te</target>
       </segment>
     </unit>
   </file>
