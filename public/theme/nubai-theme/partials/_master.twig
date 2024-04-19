@@ -4,15 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            {%- if record|default and record.title -%}
-                {{- record.title ~ ' | ' -}}
-            {%- endif -%}
-            {{- config.get('general/sitename') -}}
-            {%- if record|default == null -%}
-                {{- ''-}}
-            {%- endif -%}
-        </title>
+        <title>{% block title %}{% endblock title %}</title>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -28,6 +20,8 @@
                     {% trans %}you.are.logged.in.as{% endtrans %} {{ app.user.userIdentifier }}, <a href="{{ path('logout_nubai') }}">Logout</a>
                 </div>
             {% endif %}
+
+            {# Aqui vamos meter os messagens flash #}
 
             {% block body %}
 
