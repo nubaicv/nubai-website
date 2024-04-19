@@ -67,5 +67,29 @@
         <target>Regista-te</target>
       </segment>
     </unit>
+    <unit id="c1prjRW" name="Agree terms">
+      <segment>
+        <source>Agree terms</source>
+        <target>Concordo com termos</target>
+      </segment>
+    </unit>
+    <unit id="D2N6_cP" name="label.email">
+      <segment>
+        <source>label.email</source>
+        <target>Correio</target>
+      </segment>
+    </unit>
+    <unit id="9pvowqn" name="label.password">
+      <segment>
+        <source>label.password</source>
+        <target>Palavra-passe</target>
+      </segment>
+    </unit>
+    <unit id="5qZRR0i" name="you.are.logged.in.as">
+      <segment>
+        <source>you.are.logged.in.as</source>
+        <target>you.are.logged.in.as</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

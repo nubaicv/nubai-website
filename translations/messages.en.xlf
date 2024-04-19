@@ -67,6 +67,12 @@
         <target>Log in</target>
       </segment>
     </unit>
+    <unit id="D2N6_cP" name="label.email">
+      <segment>
+        <source>label.email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
     <unit id="c1prjRW" name="Agree terms">
       <segment>
         <source>Agree terms</source>
