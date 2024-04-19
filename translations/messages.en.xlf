@@ -79,5 +79,11 @@
         <target>Agree terms</target>
       </segment>
     </unit>
+    <unit id="5qZRR0i" name="you.are.logged.in.as">
+      <segment>
+        <source>you.are.logged.in.as</source>
+        <target>you.are.logged.in.as</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
