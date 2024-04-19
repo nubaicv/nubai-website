@@ -1,0 +1,28 @@
+{% extends 'partials/_master.twig' %}
+
+{% block title %}
+    {% trans %}title.login.page{% endtrans %}
+{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <h1>{% trans %}header.register.form{% endtrans %}</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.email, {
+            label: 'label.email'
+        }) }}
+    {{ form_row(registrationForm.plainPassword, {
+            label: 'label.password'
+        }) }}
+    {{ form_row(registrationForm.agreeTerms) }}
+
+    <button type="submit">{% trans %}button.register{% endtrans %}</button>
+    {{ form_end(registrationForm) }}
+    <a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a>
+{% endblock %}

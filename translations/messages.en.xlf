@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="messages.en">
     <unit id="BgEXmtG" name="homepage.service_cards.header">
       <segment>
@@ -35,6 +35,54 @@
       <segment>
         <source>list.services.header</source>
         <target>List of services</target>
+      </segment>
+    </unit>
+    <unit id="x75Yuy7" name="link.create.new.account">
+      <segment>
+        <source>link.create.new.account</source>
+        <target>Create a new account</target>
+      </segment>
+    </unit>
+    <unit id="yKuTQ_i" name="button.register">
+      <segment>
+        <source>button.register</source>
+        <target>Register</target>
+      </segment>
+    </unit>
+    <unit id="BILIgNL" name="header.register.form">
+      <segment>
+        <source>header.register.form</source>
+        <target>Sign up</target>
+      </segment>
+    </unit>
+    <unit id="fggGSSV" name="link.go.login.page">
+      <segment>
+        <source>link.go.login.page</source>
+        <target>Have an account? Go to login</target>
+      </segment>
+    </unit>
+    <unit id="FbqT7gf" name="header.signin.form">
+      <segment>
+        <source>header.signin.form</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="D2N6_cP" name="label.email">
+      <segment>
+        <source>label.email</source>
+        <target>Email</target>
+      </segment>
+    </unit>
+    <unit id="c1prjRW" name="Agree terms">
+      <segment>
+        <source>Agree terms</source>
+        <target>Agree terms</target>
+      </segment>
+    </unit>
+    <unit id="5qZRR0i" name="you.are.logged.in.as">
+      <segment>
+        <source>you.are.logged.in.as</source>
+        <target>you.are.logged.in.as</target>
       </segment>
     </unit>
   </file>

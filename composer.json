@@ -12,7 +12,11 @@
         "bolt/redactor": "^2.0",
         "bolt/themes": "^3.5",
         "nelmio/security-bundle": "^2.12",
-        "symfony/flex": "^2.0"
+        "symfony/flex": "^2.0",
+        "symfony/form": "^5.1",
+        "symfony/validator": "^5.1",
+        "symfonycasts/reset-password-bundle": "*",
+        "symfonycasts/verify-email-bundle": "^1.15"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -23,6 +27,7 @@
         "phpstan/phpstan": "^0.12.48",
         "phpstan/phpstan-doctrine": "^0.12.20",
         "phpstan/phpstan-symfony": "^0.12.8",
+        "symfony/maker-bundle": "^1.50",
         "symplify/easy-coding-standard": "^9.4"
     },
     "config": {
