@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class FrontendSecurityController extends TwigAwareController
 {
-    #[Route(path: '/{_locale}/login', name: 'login_nubai')]
+    #[Route(path: '/{_locale}/login', name: 'login_nubai', methods: ['GET', 'POST'])]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // if ($this->getUser()) {

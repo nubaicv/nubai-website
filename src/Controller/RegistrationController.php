@@ -26,7 +26,7 @@ class RegistrationController extends TwigAwareController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/{_locale}/register', name: 'register_nubai')]
+    #[Route('/{_locale}/register', name: 'register_nubai', methods: ['GET', 'POST'])]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new Customer();

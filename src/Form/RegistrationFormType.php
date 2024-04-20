@@ -19,7 +19,7 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', TextType::class, [
-                'attr' => ['class' => 'w3-input w3-padding-16 w3-section']
+                'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border']
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'attr' => ['class' => 'w3-padding-16 w3-section'],
@@ -34,14 +34,14 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password', 'class' => 'w3-input w3-padding-16 w3-section'],
+                'attr' => ['autocomplete' => 'new-password', 'class' => 'w3-input w3-padding-16 w3-section w3-border'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'please.enter.a.password',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'your.password.should.be.at.least.{{ limit }}.characters',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),

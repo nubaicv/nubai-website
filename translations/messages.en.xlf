@@ -94,7 +94,7 @@
     <unit id="PII5AQ." name="title.login.page">
       <segment>
         <source>title.login.page</source>
-        <target>title.login.page</target>
+        <target>Log in | Nubai</target>
       </segment>
     </unit>
     <unit id="0lMFPaU" name="service.title">
@@ -106,13 +106,13 @@
     <unit id="0azKJvE" name="title.homepage">
       <segment>
         <source>title.homepage</source>
-        <target>title.homepage</target>
+        <target>Nubai | Homepage</target>
       </segment>
     </unit>
     <unit id="oyIugfW" name="title.register.page">
       <segment>
         <source>title.register.page</source>
-        <target>title.register.page</target>
+        <target>Sign up | Nubai</target>
       </segment>
     </unit>
   </file>

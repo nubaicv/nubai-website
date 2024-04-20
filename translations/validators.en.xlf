@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="pt-BR">
-  <file id="validators.pt_BR">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
+  <file id="validators.en">
     <unit id="x9m4aZt" name="your.password.should.be.at.least.{{ limit }}.characters">
       <segment>
         <source>your.password.should.be.at.least.{{ limit }}.characters</source>
-        <target>Palavra-passe mínimo {{ limit }} caracteres</target>
+        <target>Password should be at least {{ limit }} characters</target>
       </segment>
     </unit>
   </file>
