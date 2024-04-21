@@ -115,5 +115,35 @@
         <target>Sign up | Nubai</target>
       </segment>
     </unit>
+    <unit id="Ubh3ehe" name="title.reset.password.request.page">
+      <segment>
+        <source>title.reset.password.request.page</source>
+        <target>Send a password reset request</target>
+      </segment>
+    </unit>
+    <unit id="EM6n99." name="heading.reset.password.request.form">
+      <segment>
+        <source>heading.reset.password.request.form</source>
+        <target>Reset your password</target>
+      </segment>
+    </unit>
+    <unit id="M20vBBy" name="button.reset.password.request.form">
+      <segment>
+        <source>button.reset.password.request.form</source>
+        <target>Send request</target>
+      </segment>
+    </unit>
+    <unit id="iRQfm1K" name="info.reset.password.request.form">
+      <segment>
+        <source>info.reset.password.request.form</source>
+        <target>Enter your email address, and we will send you a link to reset your password</target>
+      </segment>
+    </unit>
+    <unit id="qM6MAQc" name="link.to.reset.password.request">
+      <segment>
+        <source>link.to.reset.password.request</source>
+        <target>Forgot your password?</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -121,5 +121,35 @@
         <target>Nubai | Inicio</target>
       </segment>
     </unit>
+    <unit id="Ubh3ehe" name="title.reset.password.request.page">
+      <segment>
+        <source>title.reset.password.request.page</source>
+        <target>Enviar pedido de troca de palavra-passe</target>
+      </segment>
+    </unit>
+    <unit id="EM6n99." name="heading.reset.password.request.form">
+      <segment>
+        <source>heading.reset.password.request.form</source>
+        <target>Mudar a palavra-passe</target>
+      </segment>
+    </unit>
+    <unit id="M20vBBy" name="button.reset.password.request.form">
+      <segment>
+        <source>button.reset.password.request.form</source>
+        <target>Enviar pedido</target>
+      </segment>
+    </unit>
+    <unit id="iRQfm1K" name="info.reset.password.request.form">
+      <segment>
+        <source>info.reset.password.request.form</source>
+        <target>Digite seu endereço de e-mail e enviaremos um link para redefinir sua senha</target>
+      </segment>
+    </unit>
+    <unit id="qM6MAQc" name="link.to.reset.password.request">
+      <segment>
+        <source>link.to.reset.password.request</source>
+        <target>Esqueceu a sua senha?</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
