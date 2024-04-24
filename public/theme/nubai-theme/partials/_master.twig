@@ -22,6 +22,27 @@
             {% endif %}
 
             {# Aqui vamos meter os messagens flash #}
+            {% for message in app.flashes('success') %}
+                <div class="w3-panel w3-pale-green w3-border w3-padding-16">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('warning') %}
+                <div class="">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('info') %}
+                <div class="">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
+            {# ---------------------------------------------------- #}
 
             {% block body %}
 

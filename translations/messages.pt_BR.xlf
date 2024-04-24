@@ -88,19 +88,13 @@
     <unit id="5qZRR0i" name="you.are.logged.in.as">
       <segment>
         <source>you.are.logged.in.as</source>
-        <target>you.are.logged.in.as</target>
+        <target>Sessão iniciada como:</target>
       </segment>
     </unit>
     <unit id="XT06o0z" name="button.login">
       <segment>
         <source>button.login</source>
         <target>Iniciar sessão</target>
-      </segment>
-    </unit>
-    <unit id="SXECSqW" name="your email">
-      <segment>
-        <source>your email</source>
-        <target>your email</target>
       </segment>
     </unit>
     <unit id="PII5AQ." name="title.login.page">
@@ -149,6 +143,18 @@
       <segment>
         <source>link.to.reset.password.request</source>
         <target>Esqueceu a sua senha?</target>
+      </segment>
+    </unit>
+    <unit id="zxHr4.P" name="your.email.address.has.been.verified">
+      <segment>
+        <source>your.email.address.has.been.verified</source>
+        <target>Seu endereço de e-mail foi verificado com sucesso</target>
+      </segment>
+    </unit>
+    <unit id="ATPXkN2" name="resgistered.confirmation.email.sent">
+      <segment>
+        <source>resgistered.confirmation.email.sent</source>
+        <target>Ótimo! Consulte sua caixa de entrada para verificar seu endereço de e-mail antes de fazer login</target>
       </segment>
     </unit>
   </file>

@@ -24,7 +24,7 @@ class FrontendSecurityController extends TwigAwareController
         return $this->render('security/login.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
-    #[Route(path: '/logout', name: 'logout_nubai')]
+    #[Route(path: '/{_locale}/logout', name: 'logout_nubai', methods: ['GET'])]
     public function logout(): void
     {
     }
