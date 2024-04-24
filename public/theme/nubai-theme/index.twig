@@ -1,5 +1,9 @@
 {% extends 'partials/_master.twig' %}
 
+{% block title %}
+    {% trans %}title.homepage{% endtrans %}
+{% endblock %}
+
 {% block main %}
     <h1>{% trans %}homepage.service_cards.header{% endtrans %}</h1>
     <div class="w3-row">

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="pt-BR">
+  <file id="security.pt_BR">
+    <unit id="P2AqUvi" name="your.email.account.was.not.yet.verified">
+      <segment>
+        <source>your.email.account.was.not.yet.verified</source>
+        <target>Sua conta de e-mail ainda não foi verificada</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

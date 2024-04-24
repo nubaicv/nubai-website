@@ -26,7 +26,7 @@ class RegistrationController extends TwigAwareController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/{_locale}/register', name: 'register_nubai')]
+    #[Route('/{_locale}/register', name: 'register_nubai', methods: ['GET', 'POST'])]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new Customer();
@@ -54,6 +54,8 @@ class RegistrationController extends TwigAwareController
                     ->htmlTemplate('@theme/security/email/confirmation_email.twig')
             );
             // do anything else you need here, like send an email
+            
+            $this->addFlash('success', 'resgistered.confirmation.email.sent');
 
             return $this->redirectToRoute('login_nubai');
         }
@@ -63,7 +65,7 @@ class RegistrationController extends TwigAwareController
         ]);
     }
 
-    #[Route('/verify/email', name: 'verify_email_nubai')]
+    #[Route('{_locale}/verify/email', name: 'verify_email_nubai', methods: ['GET'])]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator, CustomerRepository $customerRepository): Response
     {
         $id = $request->query->get('id');

@@ -4,7 +4,7 @@ namespace App\Security;
 
 use App\Entity\Customer;
 //use Symfony\Component\Security\Core\Exception\AccountExpiredException;
-//use Symfony\Component\Security\Core\Exception\CustomUserMessageAccountStatusException;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAccountStatusException;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -15,11 +15,11 @@ class FrontendUserChecker implements UserCheckerInterface
         if (!$user instanceof Customer) {
             return;
         }
-//
-//        if ($user->isDeleted()) {
-//            // the message passed to this exception is meant to be displayed to the user
-//            throw new CustomUserMessageAccountStatusException('Your user account no longer exists.');
-//        }
+
+        if (!$user->isVerified()) {
+            // the message passed to this exception is meant to be displayed to the user
+            throw new CustomUserMessageAccountStatusException('your.email.account.was.not.yet.verified');
+        }
     }
 
     public function checkPostAuth(UserInterface $user): void

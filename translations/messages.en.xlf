@@ -82,7 +82,73 @@
     <unit id="5qZRR0i" name="you.are.logged.in.as">
       <segment>
         <source>you.are.logged.in.as</source>
-        <target>you.are.logged.in.as</target>
+        <target>Logged in as:</target>
+      </segment>
+    </unit>
+    <unit id="XT06o0z" name="button.login">
+      <segment>
+        <source>button.login</source>
+        <target>Log in</target>
+      </segment>
+    </unit>
+    <unit id="PII5AQ." name="title.login.page">
+      <segment>
+        <source>title.login.page</source>
+        <target>Log in | Nubai</target>
+      </segment>
+    </unit>
+    <unit id="0azKJvE" name="title.homepage">
+      <segment>
+        <source>title.homepage</source>
+        <target>Nubai | Homepage</target>
+      </segment>
+    </unit>
+    <unit id="oyIugfW" name="title.register.page">
+      <segment>
+        <source>title.register.page</source>
+        <target>Sign up | Nubai</target>
+      </segment>
+    </unit>
+    <unit id="Ubh3ehe" name="title.reset.password.request.page">
+      <segment>
+        <source>title.reset.password.request.page</source>
+        <target>Send a password reset request</target>
+      </segment>
+    </unit>
+    <unit id="EM6n99." name="heading.reset.password.request.form">
+      <segment>
+        <source>heading.reset.password.request.form</source>
+        <target>Reset your password</target>
+      </segment>
+    </unit>
+    <unit id="M20vBBy" name="button.reset.password.request.form">
+      <segment>
+        <source>button.reset.password.request.form</source>
+        <target>Send request</target>
+      </segment>
+    </unit>
+    <unit id="iRQfm1K" name="info.reset.password.request.form">
+      <segment>
+        <source>info.reset.password.request.form</source>
+        <target>Enter your email address, and we will send you a link to reset your password</target>
+      </segment>
+    </unit>
+    <unit id="qM6MAQc" name="link.to.reset.password.request">
+      <segment>
+        <source>link.to.reset.password.request</source>
+        <target>Forgot your password?</target>
+      </segment>
+    </unit>
+    <unit id="zxHr4.P" name="your.email.address.has.been.verified">
+      <segment>
+        <source>your.email.address.has.been.verified</source>
+        <target>Your email address has been verified successfully</target>
+      </segment>
+    </unit>
+    <unit id="ATPXkN2" name="resgistered.confirmation.email.sent">
+      <segment>
+        <source>resgistered.confirmation.email.sent</source>
+        <target>Great! Consult your inbox in order to verify you email address before logging in</target>
       </segment>
     </unit>
   </file>

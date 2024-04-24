@@ -5,22 +5,26 @@
 {% endblock %}
 
 {% block body %}
-    <form method="post">
+    <form class="" method="post">
         {% if error %}
-            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="w3-text-red">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
         <h1>{% trans %}header.signin.form{% endtrans %}</h1>
         <label for="inputEmail">{% trans %}label.email{% endtrans %}</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <input type="email" value="" name="email" id="inputEmail" class="form-control w3-input w3-padding-16 w3-section w3-border" autocomplete="email" required autofocus>
         <label for="inputPassword">{% trans %}label.password{% endtrans %}</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <input type="password" name="password" id="inputPassword" class="form-control w3-input w3-padding-16 w3-section w3-border" autocomplete="current-password" required>
 
         <input type="hidden" name="_csrf_token"
                value="{{ csrf_token('authenticate') }}"
                >
 
-        <button type="submit">{% trans %}button.register{% endtrans %}</button>
+        <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.login{% endtrans %}</button>
+        <br>
+        <a href="{{ path('register_nubai') }}">{% trans %}link.create.new.account{% endtrans %}</a>
+        <br>
+        <a href="{{ path('reset_password_nubai') }}">{% trans %}link.to.reset.password.request{% endtrans %}</a>
+        
     </form>
-    <a href="{{ path('register_nubai') }}">{% trans %}link.create.new.account{% endtrans %}</a>
 {% endblock %}

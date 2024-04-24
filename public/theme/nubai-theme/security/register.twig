@@ -1,7 +1,7 @@
 {% extends 'partials/_master.twig' %}
 
 {% block title %}
-    {% trans %}title.login.page{% endtrans %}
+    {% trans %}title.register.page{% endtrans %}
 {% endblock %}
 
 {% block body %}
@@ -22,7 +22,7 @@
         }) }}
     {{ form_row(registrationForm.agreeTerms) }}
 
-    <button type="submit">{% trans %}button.register{% endtrans %}</button>
+    <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.register{% endtrans %}</button>
     {{ form_end(registrationForm) }}
     <a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a>
 {% endblock %}
