@@ -161,7 +161,7 @@ class ResetPasswordController extends AbstractController
             ->from(new Address('website@nubai.com.cv', 'Nubai Mail Bot'))
             ->to($user->getEmail())
             ->subject('Your password reset request')
-            ->htmlTemplate('@theme/security/email/reset_password/email.twig')
+            ->htmlTemplate('@theme/security/email/confirmation_reset.twig')
             ->context([
                 'resetToken' => $resetToken,
             ])

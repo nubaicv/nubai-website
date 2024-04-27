@@ -7,5 +7,17 @@
         <target>Palavra-passe mínimo {{ limit }} caracteres</target>
       </segment>
     </unit>
+    <unit id="mQa8bI_" name="please.enter.a.password">
+      <segment>
+        <source>please.enter.a.password</source>
+        <target>please.enter.a.password</target>
+      </segment>
+    </unit>
+    <unit id="GMsDi1h" name="not.valid.email.address">
+      <segment>
+        <source>not.valid.email.address</source>
+        <target>not.valid.email.address</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

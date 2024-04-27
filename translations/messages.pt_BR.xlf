@@ -157,5 +157,11 @@
         <target>Ótimo! Consulte sua caixa de entrada para verificar seu endereço de e-mail antes de fazer login</target>
       </segment>
     </unit>
+    <unit id="mWciMuH" name="title.check.reset.email">
+      <segment>
+        <source>title.check.reset.email</source>
+        <target>title.check.reset.email</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
