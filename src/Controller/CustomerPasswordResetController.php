@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class CustomerPasswordResetController extends TwigAwareController {
@@ -51,6 +52,31 @@ class CustomerPasswordResetController extends TwigAwareController {
         return $this->render('@theme/security/check_reset_email.twig', [
         ]);
     }
+    
+    #[Route('{_locale}/reset/{token}', name: 'reset_token_nubai', methods: ['GET'])]
+    public function reset(Request $request, UserPasswordHasherInterface $passwordHasher, TranslatorInterface $translator, string $token = null): Response {
+        
+        if ($token) {
+            
+            // We store the token in session and remove it from the URL, to avoid the URL being
+            // loaded in a browser and potentially leaking the token to 3rd party JavaScript.
+            $request->getSession()->set('resetToken', $token);
+            return $this->redirectToRoute('reset_token_nubai');
+        }
+        
+        $token = $request->getSession()->get('resetToken');
+        
+        if (null === $token) {
+            
+            $this->addFlash('error', 'no.reset.password.token.found');
+            return $this->redirectToRoute('reset_password_nubai');
+//            throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
+        }
+        
+        $request->getSession()->remove('resetToken');
+        $this->addFlash('success', 'The token WAS: ' . $token);
+        return $this->redirectToRoute('reset_password_nubai');
+    }
 
     private function processSendingPasswordResetEmail(string $emailFormData, MailerInterface $mailer, TranslatorInterface $translator): RedirectResponse {
 
@@ -66,7 +92,7 @@ class CustomerPasswordResetController extends TwigAwareController {
         $email = (new TemplatedEmail())
                 ->from(new Address('website@nubai.com.cv', 'Nubai Mail Bot'))
                 ->to($user->getEmail())
-                ->subject('Your password reset request')
+                ->subject($translator->trans('your.password.reset.request'))
                 ->htmlTemplate('@theme/security/email/confirmation_reset.twig')
                 ->context([
                     'number' => 14,

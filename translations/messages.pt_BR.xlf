@@ -76,7 +76,7 @@
     <unit id="D2N6_cP" name="label.email">
       <segment>
         <source>label.email</source>
-        <target>Correio</target>
+        <target>Email</target>
       </segment>
     </unit>
     <unit id="9pvowqn" name="label.password">
@@ -124,7 +124,7 @@
     <unit id="EM6n99." name="heading.reset.password.request.form">
       <segment>
         <source>heading.reset.password.request.form</source>
-        <target>Mudar a palavra-passe</target>
+        <target>Redefinir a palavra-passe</target>
       </segment>
     </unit>
     <unit id="M20vBBy" name="button.reset.password.request.form">
@@ -154,13 +154,49 @@
     <unit id="ATPXkN2" name="resgistered.confirmation.email.sent">
       <segment>
         <source>resgistered.confirmation.email.sent</source>
-        <target>Ótimo! Consulte sua caixa de entrada para verificar seu endereço de e-mail antes de fazer login</target>
+        <target>Ótimo, consulte sua caixa de entrada para verificar seu endereço de e-mail antes de fazer login</target>
       </segment>
     </unit>
     <unit id="mWciMuH" name="title.check.reset.email">
       <segment>
         <source>title.check.reset.email</source>
         <target>title.check.reset.email</target>
+      </segment>
+    </unit>
+    <unit id="tbgjUWF" name="your.password.reset.request">
+      <segment>
+        <source>your.password.reset.request</source>
+        <target>Pedido de mudança da senha</target>
+      </segment>
+    </unit>
+    <unit id="GARMvR5" name="Token abc123capturado">
+      <segment>
+        <source>Token abc123capturado</source>
+        <target>Token abc123capturado</target>
+      </segment>
+    </unit>
+    <unit id="Y8.LtIN" name="The token WAS: 2345">
+      <segment>
+        <source>The token WAS: 2345</source>
+        <target>The token WAS: 2345</target>
+      </segment>
+    </unit>
+    <unit id="vxuX8kx" name="The token WAS: frty">
+      <segment>
+        <source>The token WAS: frty</source>
+        <target>The token WAS: frty</target>
+      </segment>
+    </unit>
+    <unit id="OES7ll0" name="no.reset.password.token.found">
+      <segment>
+        <source>no.reset.password.token.found</source>
+        <target>no.reset.password.token.found</target>
+      </segment>
+    </unit>
+    <unit id="7PDxUZC" name="The token WAS: derertyuyuio">
+      <segment>
+        <source>The token WAS: derertyuyuio</source>
+        <target>The token WAS: derertyuyuio</target>
       </segment>
     </unit>
   </file>

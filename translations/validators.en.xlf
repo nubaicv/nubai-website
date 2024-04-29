@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="pt-BR" trgLang="en">
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="validators.en">
     <unit id="x9m4aZt" name="your.password.should.be.at.least.{{ limit }}.characters">
       <segment>
         <source>your.password.should.be.at.least.{{ limit }}.characters</source>
         <target>Password should be at least {{ limit }} characters</target>
+      </segment>
+    </unit>
+    <unit id="mQa8bI_" name="please.enter.a.password">
+      <segment>
+        <source>please.enter.a.password</source>
+        <target>please.enter.a.password</target>
       </segment>
     </unit>
     <unit id="GMsDi1h" name="not.valid.email.address">
