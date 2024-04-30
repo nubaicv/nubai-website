@@ -154,7 +154,7 @@
     <unit id="mWciMuH" name="title.check.reset.email">
       <segment>
         <source>title.check.reset.email</source>
-        <target>title.check.reset.email</target>
+        <target>Confirm your email address</target>
       </segment>
     </unit>
     <unit id="tbgjUWF" name="your.password.reset.request">
@@ -166,7 +166,25 @@
     <unit id="OES7ll0" name="no.reset.password.token.found">
       <segment>
         <source>no.reset.password.token.found</source>
-        <target>no.reset.password.token.found</target>
+        <target>Token not found</target>
+      </segment>
+    </unit>
+    <unit id="wO2zGS7" name="check.reset.email.p1">
+      <segment>
+        <source>check.reset.email.p1</source>
+        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in X times.</target>
+      </segment>
+    </unit>
+    <unit id="5Tu2ZP0" name="check.reset.email.p2">
+      <segment>
+        <source>check.reset.email.p2</source>
+        <target>If you don't receive an email please check your spam folder or</target>
+      </segment>
+    </unit>
+    <unit id="VXA7ig1" name="check.reset.email.p3">
+      <segment>
+        <source>check.reset.email.p3</source>
+        <target>try again</target>
       </segment>
     </unit>
     <unit id="cuImEiY" name="The token WAS: abc123">
@@ -175,10 +193,10 @@
         <target>The token WAS: abc123</target>
       </segment>
     </unit>
-    <unit id="z_XDH.B" name="The token WAS: 234567">
+    <unit id="IEI4sjH" name="The token WAS: tyuiop">
       <segment>
-        <source>The token WAS: 234567</source>
-        <target>The token WAS: 234567</target>
+        <source>The token WAS: tyuiop</source>
+        <target>The token WAS: tyuiop</target>
       </segment>
     </unit>
   </file>

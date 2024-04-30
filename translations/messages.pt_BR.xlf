@@ -160,7 +160,7 @@
     <unit id="mWciMuH" name="title.check.reset.email">
       <segment>
         <source>title.check.reset.email</source>
-        <target>title.check.reset.email</target>
+        <target>Confirme seu endereço de email</target>
       </segment>
     </unit>
     <unit id="tbgjUWF" name="your.password.reset.request">
@@ -169,34 +169,34 @@
         <target>Pedido de mudança da senha</target>
       </segment>
     </unit>
-    <unit id="GARMvR5" name="Token abc123capturado">
-      <segment>
-        <source>Token abc123capturado</source>
-        <target>Token abc123capturado</target>
-      </segment>
-    </unit>
-    <unit id="Y8.LtIN" name="The token WAS: 2345">
-      <segment>
-        <source>The token WAS: 2345</source>
-        <target>The token WAS: 2345</target>
-      </segment>
-    </unit>
-    <unit id="vxuX8kx" name="The token WAS: frty">
-      <segment>
-        <source>The token WAS: frty</source>
-        <target>The token WAS: frty</target>
-      </segment>
-    </unit>
     <unit id="OES7ll0" name="no.reset.password.token.found">
       <segment>
         <source>no.reset.password.token.found</source>
-        <target>no.reset.password.token.found</target>
+        <target>Token não encontrado</target>
       </segment>
     </unit>
-    <unit id="7PDxUZC" name="The token WAS: derertyuyuio">
+    <unit id="wO2zGS7" name="check.reset.email.p1">
       <segment>
-        <source>The token WAS: derertyuyuio</source>
-        <target>The token WAS: derertyuyuio</target>
+        <source>check.reset.email.p1</source>
+        <target>Se existir uma conta que corresponda ao seu e-mail, então foi enviado um e-mail contendo um link que você pode usar para redefinir sua senha. Este link irá expirar em X vezes.</target>
+      </segment>
+    </unit>
+    <unit id="5Tu2ZP0" name="check.reset.email.p2">
+      <segment>
+        <source>check.reset.email.p2</source>
+        <target>Se você não receber um e-mail, verifique sua pasta de spam ou</target>
+      </segment>
+    </unit>
+    <unit id="VXA7ig1" name="check.reset.email.p3">
+      <segment>
+        <source>check.reset.email.p3</source>
+        <target>tente novamente</target>
+      </segment>
+    </unit>
+    <unit id="cuImEiY" name="The token WAS: abc123">
+      <segment>
+        <source>The token WAS: abc123</source>
+        <target>The token WAS: abc123</target>
       </segment>
     </unit>
   </file>

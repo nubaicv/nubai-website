@@ -95,7 +95,7 @@ class CustomerPasswordResetController extends TwigAwareController {
                 ->subject($translator->trans('your.password.reset.request'))
                 ->htmlTemplate('@theme/security/email/confirmation_reset.twig')
                 ->context([
-                    'number' => 14,
+                    'resetToken' => 'abc123',
                 ])
         ;
         

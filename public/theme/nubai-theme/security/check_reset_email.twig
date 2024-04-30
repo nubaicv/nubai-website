@@ -5,9 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    <p>
-        If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
-        This link will expire in X times.
-    </p>
-    <p>If you don't receive an email please check your spam folder or <a href="#">try again</a>.</p>
+    <p>{% trans %}check.reset.email.p1{% endtrans %}</p>
+    <p>{% trans %}check.reset.email.p2{% endtrans %} <a href="{{ url('reset_password_nubai') }}">{% trans %}check.reset.email.p3{% endtrans %}</a>.</p>
 {% endblock %}
