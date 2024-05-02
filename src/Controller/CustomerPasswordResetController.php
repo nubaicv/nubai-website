@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Repository\CustomerRepository;
 use App\Form\ResetPasswordRequestFormType;
 use Bolt\Controller\TwigAwareController;
 use Doctrine\ORM\EntityManagerInterface;
@@ -88,6 +89,15 @@ class CustomerPasswordResetController extends TwigAwareController {
         if (!$user) {
             return $this->redirectToRoute('check_reset_email_nubai');
         }
+        
+        $resetToken = \bin2hex(\random_bytes(32));
+        $user->setResetToken($resetToken);
+        
+        $this->em->persist($user);
+        $this->em->flush();
+        
+//        $this->em->getRepository(Customer::class)->generateResetToken($user);
+//        $resetToken = $user->getResetToken();
 
         $email = (new TemplatedEmail())
                 ->from(new Address('website@nubai.com.cv', 'Nubai Mail Bot'))
@@ -95,7 +105,7 @@ class CustomerPasswordResetController extends TwigAwareController {
                 ->subject($translator->trans('your.password.reset.request'))
                 ->htmlTemplate('@theme/security/email/confirmation_reset.twig')
                 ->context([
-                    'resetToken' => 'abc123',
+                    'resetToken' => $resetToken
                 ])
         ;
         

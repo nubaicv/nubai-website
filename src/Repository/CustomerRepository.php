@@ -39,6 +39,17 @@ class CustomerRepository extends ServiceEntityRepository implements PasswordUpgr
         $this->getEntityManager()->persist($user);
         $this->getEntityManager()->flush();
     }
+    
+    public function generateResetToken(Customer $user): void {
+        
+        if (!$user instanceof Customer) {
+            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', $user::class));
+        }
+        
+        $user->setResetToken(\bin2hex(\random_bytes(32)));
+        $this->getEntityManager()->persist($user);
+        $this->getEntityManager()->flush();
+    }
 
 //    /**
 //     * @return Customer[] Returns an array of Customer objects

@@ -26,28 +26,28 @@
                 <div class="w3-panel w3-display-container w3-pale-green w3-text-green w3-border w3-padding-16">
                     <span onclick="this.parentElement.style.display = 'none'"
                           class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-green"></i></span>
-                    {{ message|trans }}
+                    <i class="fa-solid fa-check"></i> {{ message|trans }}
                 </div>
             {% endfor %}
             {% for message in app.flashes('error') %}
                 <div class="w3-panel w3-display-container w3-pale-red w3-text-red w3-border w3-padding-16">
                     <span onclick="this.parentElement.style.display = 'none'"
                           class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-red"></i></span>
-                    {{ message|trans }}
+                    <i class="fa-solid fa-bomb"></i> {{ message|trans }}
                 </div>
             {% endfor %}
             {% for message in app.flashes('warning') %}
                 <div class="w3-panel w3-display-container w3-pale-yellow w3-text-yellow w3-border w3-padding-16">
                     <span onclick="this.parentElement.style.display = 'none'"
                           class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-yellow"></i></span>
-                    {{ message|trans }}
+                    <i class="fa-solid fa-triangle-exclamation"></i> {{ message|trans }}
                 </div>
             {% endfor %}
             {% for message in app.flashes('info') %}
                 <div class="w3-panel w3-display-container w3-pale-blue w3-text-blue w3-border w3-padding-16">
                     <span onclick="this.parentElement.style.display = 'none'"
                           class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-blue"></i></span>
-                    {{ message|trans }}
+                    <i class="fa-solid fa-circle-info"></i> {{ message|trans }}
                 </div>
             {% endfor %}
             {# ---------------------------------------------------- #}
