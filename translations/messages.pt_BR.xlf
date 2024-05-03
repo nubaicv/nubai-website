@@ -193,40 +193,34 @@
         <target>tente novamente</target>
       </segment>
     </unit>
-    <unit id="cuImEiY" name="The token WAS: abc123">
+    <unit id="GPp6uU2" name="new.password">
       <segment>
-        <source>The token WAS: abc123</source>
-        <target>The token WAS: abc123</target>
+        <source>new.password</source>
+        <target>new.password</target>
       </segment>
     </unit>
-    <unit id="QC7Vf6y" name="The token WAS: 435859f9bb1646edebb5ef81826f1bc1c3b852b5785125d7fe5c6d2f23d3b323">
+    <unit id="GuRpBNO" name="repeat.password">
       <segment>
-        <source>The token WAS: 435859f9bb1646edebb5ef81826f1bc1c3b852b5785125d7fe5c6d2f23d3b323</source>
-        <target>The token WAS: 435859f9bb1646edebb5ef81826f1bc1c3b852b5785125d7fe5c6d2f23d3b323</target>
+        <source>repeat.password</source>
+        <target>repeat.password</target>
       </segment>
     </unit>
-    <unit id="XiG5Ox1" name="The token WAS: e77e7824d6a3a5788cd8c51e4b7e09f74572da777aee57362a1f2775ed291a85">
+    <unit id="apx7e1Q" name="title.reset.password.page">
       <segment>
-        <source>The token WAS: e77e7824d6a3a5788cd8c51e4b7e09f74572da777aee57362a1f2775ed291a85</source>
-        <target>The token WAS: e77e7824d6a3a5788cd8c51e4b7e09f74572da777aee57362a1f2775ed291a85</target>
+        <source>title.reset.password.page</source>
+        <target>title.reset.password.page</target>
       </segment>
     </unit>
-    <unit id="A5yOw0J" name="The token WAS: d1a2b868fb4c165765996356db6c9587aaab9cd64e9ceb368229f4951043cfcd">
+    <unit id="9zWbPJU" name="header.reset.password.page">
       <segment>
-        <source>The token WAS: d1a2b868fb4c165765996356db6c9587aaab9cd64e9ceb368229f4951043cfcd</source>
-        <target>The token WAS: d1a2b868fb4c165765996356db6c9587aaab9cd64e9ceb368229f4951043cfcd</target>
+        <source>header.reset.password.page</source>
+        <target>header.reset.password.page</target>
       </segment>
     </unit>
-    <unit id="NXHGuPN" name="The token WAS: 6a001b2ffda31c30f9fe7b8126e07ac8307efcb18fccb7fbf5c7e39040c78993">
+    <unit id="CNtWLca" name="buttom.reset.password">
       <segment>
-        <source>The token WAS: 6a001b2ffda31c30f9fe7b8126e07ac8307efcb18fccb7fbf5c7e39040c78993</source>
-        <target>The token WAS: 6a001b2ffda31c30f9fe7b8126e07ac8307efcb18fccb7fbf5c7e39040c78993</target>
-      </segment>
-    </unit>
-    <unit id="MxPo8rK" name="The token WAS: 7cdbe91793bdb224c0bd3f47eb2183a000639f1b4c349d311c15264393a5bb91">
-      <segment>
-        <source>The token WAS: 7cdbe91793bdb224c0bd3f47eb2183a000639f1b4c349d311c15264393a5bb91</source>
-        <target>The token WAS: 7cdbe91793bdb224c0bd3f47eb2183a000639f1b4c349d311c15264393a5bb91</target>
+        <source>buttom.reset.password</source>
+        <target>buttom.reset.password</target>
       </segment>
     </unit>
   </file>

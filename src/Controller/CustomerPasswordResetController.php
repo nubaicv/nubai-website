@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
-use App\Repository\CustomerRepository;
+use App\Form\ChangePasswordFormType;
 use App\Form\ResetPasswordRequestFormType;
+use App\Controller\Helper\CustomerPasswordResetHelper;
 use Bolt\Controller\TwigAwareController;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
@@ -27,7 +28,7 @@ class CustomerPasswordResetController extends TwigAwareController {
     }
 
     #[Route('{_locale}/reset-password', name: 'reset_password_nubai', methods: ['GET', 'POST'])]
-    public function request(Request $request, MailerInterface $mailer, TranslatorInterface $translator): Response {
+    public function request(Request $request, MailerInterface $mailer, TranslatorInterface $translator, CustomerPasswordResetHelper $resetPasswordHelper): Response {
 
         $form = $this->createForm(ResetPasswordRequestFormType::class);
         $form->handleRequest($request);
@@ -35,6 +36,7 @@ class CustomerPasswordResetController extends TwigAwareController {
         if ($form->isSubmitted() && $form->isValid()) {
             return $this->processSendingPasswordResetEmail(
                             $form->get('email')->getData(),
+                            $resetPasswordHelper,
                             $mailer,
                             $translator
             );
@@ -55,7 +57,7 @@ class CustomerPasswordResetController extends TwigAwareController {
     }
     
     #[Route('{_locale}/reset/{token}', name: 'reset_token_nubai', methods: ['GET'])]
-    public function reset(Request $request, UserPasswordHasherInterface $passwordHasher, TranslatorInterface $translator, string $token = null): Response {
+    public function reset(Request $request, CustomerPasswordResetHelper $resetPasswordHelper, UserPasswordHasherInterface $passwordHasher, TranslatorInterface $translator, string $token = null): Response {
         
         if ($token) {
             
@@ -71,15 +73,29 @@ class CustomerPasswordResetController extends TwigAwareController {
             
             $this->addFlash('error', 'no.reset.password.token.found');
             return $this->redirectToRoute('reset_password_nubai');
-//            throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
         }
         
-        $request->getSession()->remove('resetToken');
-        $this->addFlash('success', 'The token WAS: ' . $token);
-        return $this->redirectToRoute('reset_password_nubai');
+        //Verificar aqui a igualdade dos dois tokens
+        if (!$resetPasswordHelper->validateTokenAndFetchUser($token)) {
+            
+            $this->addFlash('error', 'Error validating token');
+        }
+        
+        // The token is valid; allow the user to change their password.
+        $form = $this->createForm(ChangePasswordFormType::class);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            return $this->redirectToRoute('login_nubai');
+        }
+
+        return $this->render('@theme/security/reset_password.twig', [
+            'resetForm' => $form->createView(),
+        ]);
     }
 
-    private function processSendingPasswordResetEmail(string $emailFormData, MailerInterface $mailer, TranslatorInterface $translator): RedirectResponse {
+    private function processSendingPasswordResetEmail(string $emailFormData, CustomerPasswordResetHelper $resetPasswordHelper, MailerInterface $mailer, TranslatorInterface $translator): RedirectResponse {
 
         $user = $this->em->getRepository(Customer::class)->findOneBy([
             'email' => $emailFormData,
@@ -90,14 +106,14 @@ class CustomerPasswordResetController extends TwigAwareController {
             return $this->redirectToRoute('check_reset_email_nubai');
         }
         
-        $resetToken = \bin2hex(\random_bytes(32));
-        $user->setResetToken($resetToken);
-        
-        $this->em->persist($user);
-        $this->em->flush();
-        
-//        $this->em->getRepository(Customer::class)->generateResetToken($user);
-//        $resetToken = $user->getResetToken();
+        try {
+            
+            $resetToken = $resetPasswordHelper->generateResetToken($user);
+        } catch (\Exception $ex) {
+            
+            $this->addFlash('error', $ex->getMessage());
+            return $this->redirectToRoute('reset_password_nubai');
+        }
 
         $email = (new TemplatedEmail())
                 ->from(new Address('website@nubai.com.cv', 'Nubai Mail Bot'))
