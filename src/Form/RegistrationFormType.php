@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Customer;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -12,14 +12,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Email;
 
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', TextType::class, [
-                'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border']
+            ->add('email', EmailType::class, [
+                'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border'],
+                'constraints' => [
+                    new Email([
+                        'message' => 'not.valid.email.address',
+                    ]),
+                ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'attr' => ['class' => 'w3-padding-16 w3-section'],

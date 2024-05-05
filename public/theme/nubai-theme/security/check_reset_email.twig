@@ -1,0 +1,10 @@
+{% extends 'partials/_master.twig' %}
+
+{% block title %}
+    {% trans %}title.check.reset.email{% endtrans %}
+{% endblock %}
+
+{% block body %}
+    <p>{% trans %}check.reset.email.p1{% endtrans %}</p>
+    <p>{% trans %}check.reset.email.p2{% endtrans %} <a href="{{ url('reset_password_nubai') }}">{% trans %}check.reset.email.p3{% endtrans %}</a>.</p>
+{% endblock %}

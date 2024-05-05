@@ -148,7 +148,91 @@
     <unit id="ATPXkN2" name="resgistered.confirmation.email.sent">
       <segment>
         <source>resgistered.confirmation.email.sent</source>
-        <target>Great! Consult your inbox in order to verify you email address before logging in</target>
+        <target>Great, check your inbox in order to verify you email address before logging in</target>
+      </segment>
+    </unit>
+    <unit id="mWciMuH" name="title.check.reset.email">
+      <segment>
+        <source>title.check.reset.email</source>
+        <target>Confirm your email address</target>
+      </segment>
+    </unit>
+    <unit id="tbgjUWF" name="your.password.reset.request">
+      <segment>
+        <source>your.password.reset.request</source>
+        <target>Your password reset request</target>
+      </segment>
+    </unit>
+    <unit id="OES7ll0" name="no.reset.password.token.found">
+      <segment>
+        <source>no.reset.password.token.found</source>
+        <target>Token not found</target>
+      </segment>
+    </unit>
+    <unit id="wO2zGS7" name="check.reset.email.p1">
+      <segment>
+        <source>check.reset.email.p1</source>
+        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in X times.</target>
+      </segment>
+    </unit>
+    <unit id="5Tu2ZP0" name="check.reset.email.p2">
+      <segment>
+        <source>check.reset.email.p2</source>
+        <target>If you don't receive an email please check your spam folder or</target>
+      </segment>
+    </unit>
+    <unit id="VXA7ig1" name="check.reset.email.p3">
+      <segment>
+        <source>check.reset.email.p3</source>
+        <target>try again</target>
+      </segment>
+    </unit>
+    <unit id="apx7e1Q" name="title.reset.password.page">
+      <segment>
+        <source>title.reset.password.page</source>
+        <target>Create a new password</target>
+      </segment>
+    </unit>
+    <unit id="9zWbPJU" name="header.reset.password.page">
+      <segment>
+        <source>header.reset.password.page</source>
+        <target>Create a new password</target>
+      </segment>
+    </unit>
+    <unit id="GPp6uU2" name="new.password">
+      <segment>
+        <source>new.password</source>
+        <target>New password</target>
+      </segment>
+    </unit>
+    <unit id="GuRpBNO" name="repeat.password">
+      <segment>
+        <source>repeat.password</source>
+        <target>Retype password</target>
+      </segment>
+    </unit>
+    <unit id="CNtWLca" name="buttom.reset.password">
+      <segment>
+        <source>buttom.reset.password</source>
+        <target>Send</target>
+      </segment>
+    </unit>
+    <unit id="qrXrUZX" name="error.generate.reset.token">
+      <segment>
+        <source>error.generate.reset.token</source>
+        <target>Error generating reset token</target>
+      </segment>
+    </unit>
+    <unit id="RqIz3wY" name="error.validate.reset.token">
+      <segment>
+        <source>error.validate.reset.token</source>
+        <target>Error validating reset token</target>
+      </segment>
+    </unit>
+    <unit id="7Hq1ceL" name="password.changed">
+      <segment>
+        <source>password.changed</source>
+        <target>Password changed successfully</target>
       </segment>
     </unit>
   </file>

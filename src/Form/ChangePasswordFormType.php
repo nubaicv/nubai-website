@@ -23,23 +23,25 @@ class ChangePasswordFormType extends AbstractType
                     ],
                 ],
                 'first_options' => [
+                    'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border'],
                     'constraints' => [
                         new NotBlank([
-                            'message' => 'Please enter a password',
+                            'message' => 'please.enter.a.password',
                         ]),
                         new Length([
                             'min' => 6,
-                            'minMessage' => 'Your password should be at least {{ limit }} characters',
+                            'minMessage' => 'your.password.should.be.at.least.{{ limit }}.characters',
                             // max length allowed by Symfony for security reasons
                             'max' => 4096,
                         ]),
                     ],
-                    'label' => 'New password',
+                    'label' => 'new.password',
                 ],
                 'second_options' => [
-                    'label' => 'Repeat Password',
+                    'label' => 'repeat.password',
+                    'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border'],
                 ],
-                'invalid_message' => 'The password fields must match.',
+                'invalid_message' => 'the.password.fields.must.match.',
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
