@@ -190,43 +190,49 @@
     <unit id="apx7e1Q" name="title.reset.password.page">
       <segment>
         <source>title.reset.password.page</source>
-        <target>title.reset.password.page</target>
+        <target>Create a new password</target>
       </segment>
     </unit>
     <unit id="9zWbPJU" name="header.reset.password.page">
       <segment>
         <source>header.reset.password.page</source>
-        <target>header.reset.password.page</target>
+        <target>Create a new password</target>
       </segment>
     </unit>
     <unit id="GPp6uU2" name="new.password">
       <segment>
         <source>new.password</source>
-        <target>new.password</target>
+        <target>New password</target>
       </segment>
     </unit>
     <unit id="GuRpBNO" name="repeat.password">
       <segment>
         <source>repeat.password</source>
-        <target>repeat.password</target>
+        <target>Retype password</target>
       </segment>
     </unit>
     <unit id="CNtWLca" name="buttom.reset.password">
       <segment>
         <source>buttom.reset.password</source>
-        <target>buttom.reset.password</target>
+        <target>Send</target>
       </segment>
     </unit>
     <unit id="qrXrUZX" name="error.generate.reset.token">
       <segment>
         <source>error.generate.reset.token</source>
-        <target>error.generate.reset.token</target>
+        <target>Error generating reset token</target>
       </segment>
     </unit>
-    <unit id="SDbvOnZ" name="Error validating token">
+    <unit id="RqIz3wY" name="error.validate.reset.token">
       <segment>
-        <source>Error validating token</source>
-        <target>Error validating token</target>
+        <source>error.validate.reset.token</source>
+        <target>Error validating reset token</target>
+      </segment>
+    </unit>
+    <unit id="7Hq1ceL" name="password.changed">
+      <segment>
+        <source>password.changed</source>
+        <target>Password changed successfully</target>
       </segment>
     </unit>
   </file>

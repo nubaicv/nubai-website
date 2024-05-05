@@ -142,7 +142,7 @@
     <unit id="qM6MAQc" name="link.to.reset.password.request">
       <segment>
         <source>link.to.reset.password.request</source>
-        <target>Esqueceu a sua senha?</target>
+        <target>Esqueceu a sua palavra-passe?</target>
       </segment>
     </unit>
     <unit id="zxHr4.P" name="your.email.address.has.been.verified">
@@ -166,7 +166,7 @@
     <unit id="tbgjUWF" name="your.password.reset.request">
       <segment>
         <source>your.password.reset.request</source>
-        <target>Pedido de mudança da senha</target>
+        <target>Pedido de mudança da palavra-passe</target>
       </segment>
     </unit>
     <unit id="OES7ll0" name="no.reset.password.token.found">
@@ -196,31 +196,49 @@
     <unit id="GPp6uU2" name="new.password">
       <segment>
         <source>new.password</source>
-        <target>new.password</target>
+        <target>Nova palavra-passe</target>
       </segment>
     </unit>
     <unit id="GuRpBNO" name="repeat.password">
       <segment>
         <source>repeat.password</source>
-        <target>repeat.password</target>
+        <target>Digite novamente</target>
       </segment>
     </unit>
     <unit id="apx7e1Q" name="title.reset.password.page">
       <segment>
         <source>title.reset.password.page</source>
-        <target>title.reset.password.page</target>
+        <target>Criar uma nova palavra-passe</target>
       </segment>
     </unit>
     <unit id="9zWbPJU" name="header.reset.password.page">
       <segment>
         <source>header.reset.password.page</source>
-        <target>header.reset.password.page</target>
+        <target>Criar uma nova palavra-passe</target>
       </segment>
     </unit>
     <unit id="CNtWLca" name="buttom.reset.password">
       <segment>
         <source>buttom.reset.password</source>
-        <target>buttom.reset.password</target>
+        <target>Enviar</target>
+      </segment>
+    </unit>
+    <unit id="qrXrUZX" name="error.generate.reset.token">
+      <segment>
+        <source>error.generate.reset.token</source>
+        <target>Erro ao gerar o token</target>
+      </segment>
+    </unit>
+    <unit id="RqIz3wY" name="error.validate.reset.token">
+      <segment>
+        <source>error.validate.reset.token</source>
+        <target>Erro ao validar o token</target>
+      </segment>
+    </unit>
+    <unit id="7Hq1ceL" name="password.changed">
+      <segment>
+        <source>password.changed</source>
+        <target>Palavra-passe alterada com sucesso</target>
       </segment>
     </unit>
   </file>

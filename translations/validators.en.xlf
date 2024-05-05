@@ -10,13 +10,25 @@
     <unit id="mQa8bI_" name="please.enter.a.password">
       <segment>
         <source>please.enter.a.password</source>
-        <target>please.enter.a.password</target>
+        <target>Please enter a password</target>
       </segment>
     </unit>
     <unit id="GMsDi1h" name="not.valid.email.address">
       <segment>
         <source>not.valid.email.address</source>
-        <target>not.valid.email.address</target>
+        <target>Not a valid email address</target>
+      </segment>
+    </unit>
+    <unit id="0wnUt1R" name="the.password.fields.must.match.">
+      <segment>
+        <source>the.password.fields.must.match.</source>
+        <target>The password fields must match</target>
+      </segment>
+    </unit>
+    <unit id="LVw7Q84" name="there.is.already.an.account.with.this.email">
+      <segment>
+        <source>there.is.already.an.account.with.this.email</source>
+        <target>There is already an account with this email</target>
       </segment>
     </unit>
   </file>
