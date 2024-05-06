@@ -29,6 +29,12 @@ class RegistrationController extends TwigAwareController
     #[Route('/{_locale}/register', name: 'register_nubai', methods: ['GET', 'POST'])]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
+        
+        if ($this->isGranted('ROLE_USER')) {
+            
+            return $this->redirectToRoute('homepage_locale');
+        }
+        
         $user = new Customer();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);

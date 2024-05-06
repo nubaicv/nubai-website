@@ -20,7 +20,6 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'w3-input w3-padding-16 w3-section w3-border'],
                 'constraints' => [
                     new Email([
                         'message' => 'not.valid.email.address',
@@ -28,7 +27,6 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
-                'attr' => ['class' => 'w3-padding-16 w3-section'],
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -40,7 +38,6 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password', 'class' => 'w3-input w3-padding-16 w3-section w3-border'],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'please.enter.a.password',

@@ -5,24 +5,44 @@
 {% endblock %}
 
 {% block body %}
+    
+    {# verificar isto aqui depois, este tipo de flash se faz alguma coisa#}
     {% for flash_error in app.flashes('verify_email_error') %}
-        <div role="alert">{{ flash_error }}</div>
+        <div>{{ flash_error }}</div>
     {% endfor %}
 
     <h1>{% trans %}header.register.form{% endtrans %}</h1>
 
-    {{ form_errors(registrationForm) }}
+    <div class="form-wrapper">
+        
+        <div class="form-errors">
+            {{ form_errors(registrationForm) }}
+        </div>
 
-    {{ form_start(registrationForm) }}
-    {{ form_row(registrationForm.email, {
-            label: 'label.email'
-        }) }}
-    {{ form_row(registrationForm.plainPassword, {
-            label: 'label.password'
-        }) }}
-    {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_start(registrationForm) }}
+        
+        <div class="form-email-field">
+            {{ form_label(registrationForm.email, 'label.email') }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_errors(registrationForm.email) }}
+        </div>
+        <div class="form-password-field">
+            {{ form_label(registrationForm.plainPassword, 'label.password') }}<br>
+            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+        </div>
+        <div class="form-checkbox-field">
+            {{ form_label(registrationForm.agreeTerms, 'label.agree.terms') }}
+            {{ form_widget(registrationForm.agreeTerms) }}
+            {{ form_errors(registrationForm.agreeTerms) }}
+        </div>
+        <div class="form-submit-field">
+            <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.register{% endtrans %}</button>
+        </div>
+        
+        <a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a>
+        
+        {{ form_end(registrationForm) }}
+    </div>
 
-    <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.register{% endtrans %}</button>
-    {{ form_end(registrationForm) }}
-    <a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a>
 {% endblock %}

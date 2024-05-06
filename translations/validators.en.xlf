@@ -31,5 +31,11 @@
         <target>There is already an account with this email</target>
       </segment>
     </unit>
+    <unit id="GX7bpLK" name="you.should.agree.to.our.terms">
+      <segment>
+        <source>you.should.agree.to.our.terms</source>
+        <target>You should agree to our terms</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

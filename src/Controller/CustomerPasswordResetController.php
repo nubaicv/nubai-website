@@ -29,6 +29,11 @@ class CustomerPasswordResetController extends TwigAwareController {
 
     #[Route('{_locale}/reset-password', name: 'reset_password_nubai', methods: ['GET', 'POST'])]
     public function request(Request $request, MailerInterface $mailer, TranslatorInterface $translator, CustomerPasswordResetHelper $resetPasswordHelper): Response {
+        
+        if ($this->isGranted('ROLE_USER')) {
+            
+            return $this->redirectToRoute('homepage_locale');
+        }
 
         $form = $this->createForm(ResetPasswordRequestFormType::class);
         $form->handleRequest($request);
