@@ -5,11 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    
-    {# verificar isto aqui depois, este tipo de flash se faz alguma coisa#}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div>{{ flash_error }}</div>
-    {% endfor %}
 
     <h1>{% trans %}header.register.form{% endtrans %}</h1>
 
@@ -27,9 +22,9 @@
             {{ form_errors(registrationForm.email) }}
         </div>
         <div class="form-password-field">
-            {{ form_label(registrationForm.plainPassword, 'label.password') }}<br>
-            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
-            {{ form_errors(registrationForm.plainPassword) }}
+            {{ form_label(registrationForm.password, 'label.password') }}
+            {{ form_widget(registrationForm.password, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_errors(registrationForm.password) }}
         </div>
         <div class="form-checkbox-field">
             {{ form_label(registrationForm.agreeTerms, 'label.agree.terms') }}

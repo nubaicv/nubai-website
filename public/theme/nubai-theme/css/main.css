@@ -20,3 +20,11 @@ body > footer {
 .blue-nubai {
     color: #2c89a0;
 }
+
+/* Erros dos formularios */
+.form-email-field ul,
+.form-password-field ul,
+.form-checkbox-field ul {
+    color: red;
+    list-style-type: none;
+}

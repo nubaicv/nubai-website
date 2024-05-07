@@ -29,7 +29,7 @@ class CustomerPasswordResetHelper {
         try {
 
             $user->setResetToken($resetToken);
-            $user->setResetTokenExpiresAt(new \DateTime('3 min'));
+            $user->setResetTokenExpiresAt(new \DateTime('10 min'));
             $this->em->persist($user);
             $this->em->flush();
         } catch (\Exception $ex) {

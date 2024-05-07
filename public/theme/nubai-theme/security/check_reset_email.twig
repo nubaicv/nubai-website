@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <p>{% trans %}check.reset.email.p1{% endtrans %}</p>
-    <p>{% trans %}check.reset.email.p2{% endtrans %} <a href="{{ url('reset_password_nubai') }}">{% trans %}check.reset.email.p3{% endtrans %}</a>.</p>
+
+    <div class="w3-panel w3-display-container w3-pale-green w3-text-green w3-border w3-padding-16">
+        <i class="fa-solid fa-check"></i>
+        <p>{% trans %}check.reset.email.p1{% endtrans %}</p>
+        <p>{% trans %}check.reset.email.p2{% endtrans %} <a href="{{ url('reset_password_nubai') }}">{% trans %}check.reset.email.p3{% endtrans %}</a>.</p>
+    </div>
+        
 {% endblock %}
