@@ -172,7 +172,7 @@
     <unit id="wO2zGS7" name="check.reset.email.p1">
       <segment>
         <source>check.reset.email.p1</source>
-        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in X times.</target>
+        <target>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.</target>
       </segment>
     </unit>
     <unit id="5Tu2ZP0" name="check.reset.email.p2">
@@ -233,6 +233,54 @@
       <segment>
         <source>password.changed</source>
         <target>Password changed successfully</target>
+      </segment>
+    </unit>
+    <unit id="FLuQvA9" name="email.reset.password.heading">
+      <segment>
+        <source>email.reset.password.heading</source>
+        <target>Hello</target>
+      </segment>
+    </unit>
+    <unit id="s9PO_N8" name="email.reset.password.p1">
+      <segment>
+        <source>email.reset.password.p1</source>
+        <target>To reset your password, please visit the following link:</target>
+      </segment>
+    </unit>
+    <unit id="87wG9uu" name="This link will expire in">
+      <segment>
+        <source>This link will expire in</source>
+        <target>This link will expire in</target>
+      </segment>
+    </unit>
+    <unit id="kOY9hfo" name="minutes">
+      <segment>
+        <source>minutes</source>
+        <target>minutes</target>
+      </segment>
+    </unit>
+    <unit id="_OWPpe_" name="email.reset.password.bye">
+      <segment>
+        <source>email.reset.password.bye</source>
+        <target>Bye</target>
+      </segment>
+    </unit>
+    <unit id="e1nO.SD" name="please.confirm.your.email">
+      <segment>
+        <source>please.confirm.your.email</source>
+        <target>Please comfirm you email</target>
+      </segment>
+    </unit>
+    <unit id="nB0i.9U" name="email.confirm.email.heading">
+      <segment>
+        <source>email.confirm.email.heading</source>
+        <target>Hello</target>
+      </segment>
+    </unit>
+    <unit id="ITaQX9q" name="Confirm my Email">
+      <segment>
+        <source>Confirm my Email</source>
+        <target>Confirm my Email</target>
       </segment>
     </unit>
   </file>

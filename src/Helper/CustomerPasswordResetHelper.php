@@ -16,10 +16,14 @@ class CustomerPasswordResetHelper {
     ];
 
     private EntityManagerInterface $em;
+    
+    // Injetado no constructor desde services.yaml
+    private string $linkResetPasswordLifetime;
 
-    public function __construct(EntityManagerInterface $em) {
+    public function __construct(EntityManagerInterface $em, string $linkResetPasswordLifetime) {
 
         $this->em = $em;
+        $this->linkResetPasswordLifetime = $linkResetPasswordLifetime;
     }
 
     public function generateResetToken(Customer $user): string {
@@ -29,7 +33,7 @@ class CustomerPasswordResetHelper {
         try {
 
             $user->setResetToken($resetToken);
-            $user->setResetTokenExpiresAt(new \DateTime('10 min'));
+            $user->setResetTokenExpiresAt(new \DateTime($this->linkResetPasswordLifetime . 'min'));
             $this->em->persist($user);
             $this->em->flush();
         } catch (\Exception $ex) {

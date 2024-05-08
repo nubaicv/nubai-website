@@ -178,7 +178,7 @@
     <unit id="wO2zGS7" name="check.reset.email.p1">
       <segment>
         <source>check.reset.email.p1</source>
-        <target>Se existir uma conta que corresponda ao seu e-mail, então foi enviado um e-mail contendo um link que você pode usar para redefinir sua senha. Este link irá expirar em X vezes.</target>
+        <target>Se existir uma conta que corresponda ao seu e-mail, então foi enviado um e-mail contendo um link que você pode usar para redefinir sua senha.</target>
       </segment>
     </unit>
     <unit id="5Tu2ZP0" name="check.reset.email.p2">
@@ -239,6 +239,54 @@
       <segment>
         <source>password.changed</source>
         <target>Palavra-passe alterada com sucesso</target>
+      </segment>
+    </unit>
+    <unit id="FLuQvA9" name="email.reset.password.heading">
+      <segment>
+        <source>email.reset.password.heading</source>
+        <target>Olá</target>
+      </segment>
+    </unit>
+    <unit id="vQH5j0c" name="email.reset.password.p1">
+      <segment>
+        <source>email.reset.password.p1</source>
+        <target>Para redefinir sua palavra-passe, visite o seguinte link:</target>
+      </segment>
+    </unit>
+    <unit id="87wG9uu" name="This link will expire in">
+      <segment>
+        <source>This link will expire in</source>
+        <target>Este link vai expirar em</target>
+      </segment>
+    </unit>
+    <unit id="kOY9hfo" name="minutes">
+      <segment>
+        <source>minutes</source>
+        <target>minutos</target>
+      </segment>
+    </unit>
+    <unit id="_OWPpe_" name="email.reset.password.bye">
+      <segment>
+        <source>email.reset.password.bye</source>
+        <target>Tchau</target>
+      </segment>
+    </unit>
+    <unit id="e1nO.SD" name="please.confirm.your.email">
+      <segment>
+        <source>please.confirm.your.email</source>
+        <target>Por favor confirme seu email</target>
+      </segment>
+    </unit>
+    <unit id="nB0i.9U" name="email.confirm.email.heading">
+      <segment>
+        <source>email.confirm.email.heading</source>
+        <target>Olá</target>
+      </segment>
+    </unit>
+    <unit id="ITaQX9q" name="Confirm my Email">
+      <segment>
+        <source>Confirm my Email</source>
+        <target>Confirmar meu email</target>
       </segment>
     </unit>
   </file>

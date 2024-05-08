@@ -27,7 +27,7 @@ class RegistrationController extends TwigAwareController
     }
 
     #[Route('/{_locale}/register', name: 'register_nubai', methods: ['GET', 'POST'])]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, TranslatorInterface $translator): Response
     {
         
         if ($this->isGranted('ROLE_USER')) {
@@ -56,7 +56,7 @@ class RegistrationController extends TwigAwareController
                 (new TemplatedEmail())
                     ->from(new Address('website@nubai.com.cv', 'Nubai Website Bot'))
                     ->to($user->getEmail())
-                    ->subject('Please Confirm your Email')
+                    ->subject($translator->trans('please.confirm.your.email'))
                     ->htmlTemplate('@theme/security/email/confirmation_email.twig')
             );
             // do anything else you need here, like send an email

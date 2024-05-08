@@ -1,9 +1,9 @@
-<h1>Hi!</h1>
+<h1>{% trans %}email.reset.password.heading{% endtrans %}</h1>
 
-<p>To reset your password, please visit the following link</p>
+<p>{% trans %}email.reset.password.p1{% endtrans %}</p>
 
 <a href="{{ url('reset_token_nubai', {token: resetToken}) }}">{{ url('reset_token_nubai', {token: resetToken}) }}</a>
 
-<p>This link will expire in X.</p>
+<p>{% trans %}This link will expire in{% endtrans %} {{ linkLifetime }} {% trans %}minutes{% endtrans %}.</p>
 
-<p>Cheers!</p>
+<p>{% trans %}email.reset.password.bye{% endtrans %}</p>
