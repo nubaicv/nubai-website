@@ -247,7 +247,7 @@
         <target>Olá</target>
       </segment>
     </unit>
-    <unit id="vQH5j0c" name="email.reset.password.p1">
+    <unit id="s9PO_N8" name="email.reset.password.p1">
       <segment>
         <source>email.reset.password.p1</source>
         <target>Para redefinir sua palavra-passe, visite o seguinte link:</target>
@@ -287,6 +287,24 @@
       <segment>
         <source>Confirm my Email</source>
         <target>Confirmar meu email</target>
+      </segment>
+    </unit>
+    <unit id="zJ5tS45" name="The link to verify your email is invalid. Please request a new link.">
+      <segment>
+        <source>The link to verify your email is invalid. Please request a new link.</source>
+        <target>O link para verificar seu e-mail expirou. Solicite um novo link.</target>
+      </segment>
+    </unit>
+    <unit id="1orpjhC" name="email.confirm.email.p1">
+      <segment>
+        <source>email.confirm.email.p1</source>
+        <target>Por favor, confirme seu endereço de e-mail clicando no link a seguir:</target>
+      </segment>
+    </unit>
+    <unit id="hBmAXRD" name="email.confirm.email.bye">
+      <segment>
+        <source>email.confirm.email.bye</source>
+        <target>Tchau</target>
       </segment>
     </unit>
   </file>

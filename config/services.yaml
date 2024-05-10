@@ -57,6 +57,9 @@ services:
         arguments:
             $linkResetPasswordLifetime: '%app.reset_password_lifetime%'
     
+    App\Event\Subscriber\LocaleSubscriber:
+        arguments: ['%kernel.default_locale%']
+            
     
     Bolt\:
         resource: '../vendor/bolt/core/src/*'

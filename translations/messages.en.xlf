@@ -283,5 +283,23 @@
         <target>Confirm my Email</target>
       </segment>
     </unit>
+    <unit id="bSCr1q0" name="The link to verify your email has expired. Please request a new link.">
+      <segment>
+        <source>The link to verify your email has expired. Please request a new link.</source>
+        <target>The link to verify your email has expired. Please request a new link.</target>
+      </segment>
+    </unit>
+    <unit id="1orpjhC" name="email.confirm.email.p1">
+      <segment>
+        <source>email.confirm.email.p1</source>
+        <target>Please confirm your email address by clicking the following link:</target>
+      </segment>
+    </unit>
+    <unit id="hBmAXRD" name="email.confirm.email.bye">
+      <segment>
+        <source>email.confirm.email.bye</source>
+        <target>Bye</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
