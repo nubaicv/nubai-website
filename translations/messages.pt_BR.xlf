@@ -307,5 +307,11 @@
         <target>Tchau</target>
       </segment>
     </unit>
+    <unit id="8COOljc" name="error.403">
+      <segment>
+        <source>error.403</source>
+        <target>Erro 403: Proibido</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

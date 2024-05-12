@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>{% block title %}{% endblock title %}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png', 'files') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png', 'files') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png', 'files') }}">
+        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    </head>
+    <body>
+
+        {{ include('partials/_header.twig') }}
+
+        <main class="w3-container w3-white w3-padding-16">
+
+            {% if app.user %}
+                <div>
+                    {% trans %}you.are.logged.in.as{% endtrans %} {{ app.user.userIdentifier }}, <a href="{{ path('logout_nubai') }}">Logout</a>
+                </div>
+            {% endif %}
+
+            {# Aqui vamos meter os messagens flash #}
+            {% for message in app.flashes('success') %}
+                <div class="w3-panel w3-display-container w3-pale-green w3-text-green w3-border w3-padding-16">
+                    <span onclick="this.parentElement.style.display = 'none'"
+                          class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-green"></i></span>
+                    <i class="fa-solid fa-check"></i> {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="w3-panel w3-display-container w3-pale-red w3-text-red w3-border w3-padding-16">
+                    <span onclick="this.parentElement.style.display = 'none'"
+                          class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-red"></i></span>
+                    <i class="fa-solid fa-bomb"></i> {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('warning') %}
+                <div class="w3-panel w3-display-container w3-pale-yellow w3-text-yellow w3-border w3-padding-16">
+                    <span onclick="this.parentElement.style.display = 'none'"
+                          class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-yellow"></i></span>
+                    <i class="fa-solid fa-triangle-exclamation"></i> {{ message|trans }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('info') %}
+                <div class="w3-panel w3-display-container w3-pale-blue w3-text-blue w3-border w3-padding-16">
+                    <span onclick="this.parentElement.style.display = 'none'"
+                          class="w3-button w3-large w3-display-topright"><i class="fa-solid fa-xmark w3-text-blue"></i></span>
+                    <i class="fa-solid fa-circle-info"></i> {{ message|trans }}
+                </div>
+            {% endfor %}
+            {# ---------------------------------------------------- #}
+
+            {% block body %}
+
+                {% block main %}
+                {% endblock main %}
+
+            {% endblock body %}
+        </main>
+
+        {% setcontent warning = 'blocks/website-warning' %}
+
+        <div id="menu-modal" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container w3-padding-16">
+                    <span onclick="close_menu_modal();" class="w3-button w3-display-topright"><i class="fa-solid fa-xmark blue-nubai"></i></span>
+                    <nav>
+                        <h2>Menu</h2>
+                        <ul class="w3-ul">
+                            <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
+                            <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
+                        </ul>
+                    </nav>
+                    <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    </body>
+</html>
