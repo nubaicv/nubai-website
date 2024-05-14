@@ -31,6 +31,10 @@
             {{ form_widget(registrationForm.agreeTerms) }}
             {{ form_errors(registrationForm.agreeTerms) }}
         </div>
+        <div class="form-captcha-field">
+            {{ form_widget(registrationForm.captcha, {'attr': {'class': 'w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_errors(registrationForm.captcha) }}
+        </div>
         <div class="form-submit-field">
             <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.register{% endtrans %}</button>
         </div>

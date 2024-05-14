@@ -24,7 +24,8 @@ body > footer {
 /* Erros dos formularios */
 .form-email-field ul,
 .form-password-field ul,
-.form-checkbox-field ul {
+.form-checkbox-field ul,
+.form-captcha-field ul {
     color: red;
     list-style-type: none;
 }

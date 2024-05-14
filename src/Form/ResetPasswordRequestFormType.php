@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
+use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class ResetPasswordRequestFormType extends AbstractType {
 
@@ -19,6 +20,7 @@ class ResetPasswordRequestFormType extends AbstractType {
                         ]),
                     ],
                 ])
+                ->add('captcha', CaptchaType::class, [])
         ;
     }
 
