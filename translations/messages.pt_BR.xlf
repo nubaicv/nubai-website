@@ -292,7 +292,7 @@
     <unit id="zJ5tS45" name="The link to verify your email is invalid. Please request a new link.">
       <segment>
         <source>The link to verify your email is invalid. Please request a new link.</source>
-        <target>O link para verificar seu e-mail expirou. Solicite um novo link.</target>
+        <target>O link para verificar seu e-mail expirou. Verifique redefinindo sua palavra-passe.</target>
       </segment>
     </unit>
     <unit id="1orpjhC" name="email.confirm.email.p1">
@@ -311,6 +311,12 @@
       <segment>
         <source>error.403</source>
         <target>Erro 403: Proibido</target>
+      </segment>
+    </unit>
+    <unit id="i47sLNR" name="account.activated">
+      <segment>
+        <source>account.activated</source>
+        <target>Sua conta foi ativada</target>
       </segment>
     </unit>
   </file>

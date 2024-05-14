@@ -9,13 +9,13 @@
     <h1>{% trans %}header.register.form{% endtrans %}</h1>
 
     <div class="form-wrapper">
-        
+
         <div class="form-errors">
             {{ form_errors(registrationForm) }}
         </div>
 
         {{ form_start(registrationForm) }}
-        
+
         <div class="form-email-field">
             {{ form_label(registrationForm.email, 'label.email') }}
             {{ form_widget(registrationForm.email, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
@@ -34,9 +34,9 @@
         <div class="form-submit-field">
             <button type="submit" class="w3-btn w3-button w3-dark-gray w3-padding-16 w3-section">{% trans %}button.register{% endtrans %}</button>
         </div>
-        
-        <a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a>
-        
+
+        <p><a href="{{ path('login_nubai') }}">{% trans %}link.go.login.page{% endtrans %}</a></p>
+
         {{ form_end(registrationForm) }}
     </div>
 

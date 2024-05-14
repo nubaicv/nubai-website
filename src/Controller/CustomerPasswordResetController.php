@@ -111,6 +111,10 @@ class CustomerPasswordResetController extends TwigAwareController {
             );
 
             $user->setPassword($encodedPassword);
+            if (!$user->isVerified() === true) {
+                $user->setIsVerified(true);
+                $this->addFlash('success', 'account.activated');
+            }
             $this->em->flush();
 
             $request->getSession()->remove('resetToken');
@@ -138,11 +142,7 @@ class CustomerPasswordResetController extends TwigAwareController {
 
             $resetToken = $resetPasswordHelper->generateResetToken($user);
         } catch (\Exception $ex) {
-
-            //isto aqui nao e ideal porque expoe se email existe no BD.
-            //Em production enviamos um email para admin e reencaminhamos para
-            //route 'check_reset_email_nubai' ou enviamos um email para customers cadastrados
-            //silenciosamente explicando o erro.
+            
             $this->addFlash('error', $ex->getMessage());
             return $this->redirectToRoute('reset_password_nubai');
         }
@@ -158,7 +158,7 @@ class CustomerPasswordResetController extends TwigAwareController {
                 ])
         ;
 
-//        $mailer->send($email);
+        $mailer->send($email);
         //redirect when user found
         return $this->redirectToRoute('check_reset_email_nubai');
     }
