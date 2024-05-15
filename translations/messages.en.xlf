@@ -313,5 +313,11 @@
         <target>Your account was activated</target>
       </segment>
     </unit>
+    <unit id="Qxuhxde" name="email.reset.password.link">
+      <segment>
+        <source>email.reset.password.link</source>
+        <target>Reset my password</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

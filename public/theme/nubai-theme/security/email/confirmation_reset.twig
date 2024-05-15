@@ -2,7 +2,7 @@
 
 <p>{% trans %}email.reset.password.p1{% endtrans %}</p>
 
-<a href="{{ url('reset_token_nubai', {token: resetToken}) }}">{{ url('reset_token_nubai', {token: resetToken}) }}</a>
+<a href="{{ url('reset_token_nubai', {token: resetToken}) }}">{% trans %}email.reset.password.link{% endtrans %}</a>
 
 <p>{% trans %}This link will expire in{% endtrans %} {{ linkLifetime }} {% trans %}minutes{% endtrans %}.</p>
 

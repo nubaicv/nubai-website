@@ -17,6 +17,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class CustomerPasswordResetController extends TwigAwareController {
 
@@ -77,8 +78,11 @@ class CustomerPasswordResetController extends TwigAwareController {
 
         if (null === $token) {
 
-            $this->addFlash('error', 'no.reset.password.token.found');
-            return $this->redirectToRoute('reset_password_nubai');
+            $ex = new HttpException(404, 'error.404');
+            throw $ex;
+
+//            $this->addFlash('error', 'no.reset.password.token.found');
+//            return $this->redirectToRoute('reset_password_nubai');
         }
 
         //Verificar aqui a igualdade dos dois tokens
@@ -142,7 +146,7 @@ class CustomerPasswordResetController extends TwigAwareController {
 
             $resetToken = $resetPasswordHelper->generateResetToken($user);
         } catch (\Exception $ex) {
-            
+
             $this->addFlash('error', $ex->getMessage());
             return $this->redirectToRoute('reset_password_nubai');
         }

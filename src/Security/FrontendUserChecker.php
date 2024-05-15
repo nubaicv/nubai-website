@@ -15,17 +15,17 @@ class FrontendUserChecker implements UserCheckerInterface
         if (!$user instanceof Customer) {
             return;
         }
-
-        if (!$user->isVerified()) {
-            // the message passed to this exception is meant to be displayed to the user
-            throw new CustomUserMessageAccountStatusException('your.email.account.was.not.yet.verified');
-        }
     }
 
     public function checkPostAuth(UserInterface $user): void
     {
         if (!$user instanceof Customer) {
             return;
+        }
+        
+        if (!$user->isVerified()) {
+            // the message passed to this exception is meant to be displayed to the user
+            throw new CustomUserMessageAccountStatusException('your.email.account.was.not.yet.verified');
         }
 //
 //        // user account is expired, the user may be notified

@@ -319,5 +319,11 @@
         <target>Sua conta foi ativada</target>
       </segment>
     </unit>
+    <unit id="Qxuhxde" name="email.reset.password.link">
+      <segment>
+        <source>email.reset.password.link</source>
+        <target>Resetar minha senha</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
