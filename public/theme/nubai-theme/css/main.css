@@ -22,6 +22,7 @@ body > footer {
 }
 
 /* Erros dos formularios */
+.form-errors ul,
 .form-email-field ul,
 .form-password-field ul,
 .form-checkbox-field ul,

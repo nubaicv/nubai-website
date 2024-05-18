@@ -79,12 +79,6 @@
         <target>Agree terms</target>
       </segment>
     </unit>
-    <unit id="5qZRR0i" name="you.are.logged.in.as">
-      <segment>
-        <source>you.are.logged.in.as</source>
-        <target>Logged in as:</target>
-      </segment>
-    </unit>
     <unit id="XT06o0z" name="button.login">
       <segment>
         <source>button.login</source>
@@ -317,6 +311,18 @@
       <segment>
         <source>email.reset.password.link</source>
         <target>Reset my password</target>
+      </segment>
+    </unit>
+    <unit id="eh.S0X3" name="my.profile.page.title">
+      <segment>
+        <source>my.profile.page.title</source>
+        <target>My profile</target>
+      </segment>
+    </unit>
+    <unit id="hBNESu6" name="my.profile">
+      <segment>
+        <source>my.profile</source>
+        <target>My profile</target>
       </segment>
     </unit>
   </file>

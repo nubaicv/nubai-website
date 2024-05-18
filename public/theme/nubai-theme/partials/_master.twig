@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <title>{% block title %}{% endblock title %}</title>
 
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png', 'files') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png', 'files') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png', 'files') }}">
-        
+
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -20,12 +20,6 @@
         {{ include('partials/_header.twig') }}
 
         <main class="w3-container w3-white w3-padding-16">
-
-            {% if app.user %}
-                <div>
-                    {% trans %}you.are.logged.in.as{% endtrans %} {{ app.user.userIdentifier }}, <a href="{{ path('logout_nubai') }}">Logout</a>
-                </div>
-            {% endif %}
 
             {# Aqui vamos meter os messagens flash #}
             {% for message in app.flashes('success') %}
@@ -85,6 +79,7 @@
         </div>
 
         {{ include('partials/_footer.twig') }}
+        <script type="text/javascript" src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

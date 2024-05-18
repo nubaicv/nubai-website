@@ -71,7 +71,7 @@ class RegistrationController extends TwigAwareController
         ]);
     }
 
-    #[Route('{_locale}/verify/email', name: 'verify_email_nubai', methods: ['GET'])]
+    #[Route('/{_locale}/verify/email', name: 'verify_email_nubai', methods: ['GET'])]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator, CustomerRepository $customerRepository): Response
     {
         $id = $request->query->get('id');

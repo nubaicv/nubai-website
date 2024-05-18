@@ -85,12 +85,6 @@
         <target>Palavra-passe</target>
       </segment>
     </unit>
-    <unit id="5qZRR0i" name="you.are.logged.in.as">
-      <segment>
-        <source>you.are.logged.in.as</source>
-        <target>Sessão iniciada como:</target>
-      </segment>
-    </unit>
     <unit id="XT06o0z" name="button.login">
       <segment>
         <source>button.login</source>
@@ -323,6 +317,18 @@
       <segment>
         <source>email.reset.password.link</source>
         <target>Resetar minha senha</target>
+      </segment>
+    </unit>
+    <unit id="eh.S0X3" name="my.profile.page.title">
+      <segment>
+        <source>my.profile.page.title</source>
+        <target>Meu perfil</target>
+      </segment>
+    </unit>
+    <unit id="hBNESu6" name="my.profile">
+      <segment>
+        <source>my.profile</source>
+        <target>Meu perfil</target>
       </segment>
     </unit>
   </file>

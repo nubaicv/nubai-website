@@ -5,13 +5,27 @@
             <a href="{{ path('homepage_locale') }}"><img src="{{ asset('nubai-logo2.png', 'files')  }}" alt="logo" title="O nosso logo" class="logo"></a>
         </div>
         <div class="w3-bar-item w3-bar w3-right">
+            {% if app.user  %}
+                <div class="w3-bar-item">
+                    <a href="#"><i class="fa-solid fa-cart-shopping fa-2x blue-nubai"></i></a>
+                </div>
+            {% endif %}
             <div class="w3-bar-item">
-                <a href="{{ path('login_nubai') }}"><i class="fa-solid fa-right-to-bracket fa-2x blue-nubai"></i></a>
+                {% if app.user is null %}
+                    <a href="{{ path('login_nubai') }}"><i class="fa-solid fa-right-to-bracket fa-2x blue-nubai"></i></a>
+                    {% else %}
+                    <a href="{{ path('logout_nubai') }}"><i class="fa-solid fa-right-from-bracket fa-2x blue-nubai"></i></a>
+                    {% endif %}
             </div>
             <div class="w3-bar-item">
                 <a href="#" onclick="open_menu_modal();"><i class="fa-solid fa-bars fa-2x blue-nubai"></i></a>
             </div>
         </div>
     </nav>
+    {% if app.user %}
+        <div class="w3-right-align">
+            <span class="blue-nubai"><a href="{{ path('profile_nubai') }}"><i class="fa-solid fa-gear"></i> {{ app.user.userIdentifier }}</a></span>
+        </div>
+    {% endif %}
 </header>
 <!-- End Header -->
