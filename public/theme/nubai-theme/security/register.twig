@@ -17,13 +17,11 @@
         {{ form_start(registrationForm) }}
 
         <div class="form-email-field">
-            {{ form_label(registrationForm.email, 'label.email') }}
-            {{ form_widget(registrationForm.email, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_widget(registrationForm.email, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section', 'placeholder': 'label.email'}}) }}
             {{ form_errors(registrationForm.email) }}
         </div>
         <div class="form-password-field">
-            {{ form_label(registrationForm.password, 'label.password') }}
-            {{ form_widget(registrationForm.password, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section'}}) }}
+            {{ form_widget(registrationForm.password, {'attr': {'class': 'w3-input w3-padding-16 w3-border w3-section', 'placeholder': 'label.password'}}) }}
             {{ form_errors(registrationForm.password) }}
         </div>
         <div class="form-checkbox-field">

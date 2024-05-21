@@ -331,5 +331,23 @@
         <target>Meu perfil</target>
       </segment>
     </unit>
+    <unit id="CxUhURY" name="button.logout">
+      <segment>
+        <source>button.logout</source>
+        <target>Terminar sessão</target>
+      </segment>
+    </unit>
+    <unit id=".MBi.CL" name="button.create.new.account">
+      <segment>
+        <source>button.create.new.account</source>
+        <target>Nova conta</target>
+      </segment>
+    </unit>
+    <unit id="YzoF5od" name="login.welcome">
+      <segment>
+        <source>login.welcome</source>
+        <target>Bem-vindo</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

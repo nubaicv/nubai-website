@@ -21,6 +21,10 @@ body > footer {
     color: #2c89a0;
 }
 
+.blue-nubai-bg {
+    background-color: #2c89a0;
+}
+
 /* Erros dos formularios */
 .form-errors ul,
 .form-email-field ul,

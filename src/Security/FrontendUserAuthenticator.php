@@ -47,6 +47,8 @@ class FrontendUserAuthenticator extends AbstractLoginFormAuthenticator
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
+        
+        $request->getSession()->getFlashBag()->add('success', 'login.welcome');
 
         // For example:
          return new RedirectResponse($this->urlGenerator->generate('homepage_locale'));

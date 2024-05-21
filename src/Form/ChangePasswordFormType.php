@@ -29,10 +29,10 @@ class ChangePasswordFormType extends AbstractType
                             'max' => 255,
                         ]),
                     ],
-                    'label' => 'new.password',
+                    'label' => false,
                 ],
                 'second_options' => [
-                    'label' => 'repeat.password',
+                    'label' => false,
                 ],
                 'invalid_message' => 'the.password.fields.must.match.'
             ])
