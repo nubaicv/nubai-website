@@ -39,6 +39,12 @@ class Customer implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $resetTokenExpiresAt = null;
 
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $preferedLanguage = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $profilePhoto = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -160,6 +166,30 @@ class Customer implements UserInterface, PasswordAuthenticatedUserInterface
     public function setResetTokenExpiresAt(?\DateTimeInterface $resetTokenExpiresAt): static
     {
         $this->resetTokenExpiresAt = $resetTokenExpiresAt;
+
+        return $this;
+    }
+
+    public function getPreferedLanguage(): ?string
+    {
+        return $this->preferedLanguage;
+    }
+
+    public function setPreferedLanguage(?string $preferedLanguage): static
+    {
+        $this->preferedLanguage = $preferedLanguage;
+
+        return $this;
+    }
+
+    public function getProfilePhoto(): ?string
+    {
+        return $this->profilePhoto;
+    }
+
+    public function setProfilePhoto(?string $profilePhoto): static
+    {
+        $this->profilePhoto = $profilePhoto;
 
         return $this;
     }
