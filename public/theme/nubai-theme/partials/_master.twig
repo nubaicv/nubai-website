@@ -14,12 +14,47 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+        <script type="module" src="{{ asset('js/controllers.js') }}"></script>
     </head>
     <body>
 
         {{ include('partials/_header.twig') }}
 
         <main class="w3-container w3-white w3-padding-16">
+
+            <!-- Stimulus -->
+            <div data-controller="content-loader"
+                 data-content-loader-url-value="/html"
+                 data-content-loader-refresh-interval-value="5000"></div>
+            <div data-controller="slideshow" data-slideshow-index-value="1">
+                <button data-action="slideshow#previous"> ← </button>
+                <button data-action="slideshow#next"> → </button>
+
+                <div data-slideshow-target="slide">🐵</div>
+                <div data-slideshow-target="slide">🙈</div>
+                <div data-slideshow-target="slide">🙉</div>
+                <div data-slideshow-target="slide">🙊</div>
+            </div>
+            <div data-controller="greet">
+                <input data-greet-target="name" type="text">
+                <button data-action="click->greet#greet">Greet</button>
+            </div>
+
+            <div data-controller="clipboard" data-clipboard-supported-class="clipboard--supported">
+                PIN: <input data-clipboard-target="source" type="text" value="1234" readonly>
+                <button data-action="clipboard#copy" class="clipboard-button">Copy to clipboard</button>
+            </div>
+            <div data-controller="selector">
+                <select data-selector-target="selectfield" data-action="change->selector#change">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+                <span data-selector-target="output"></span>
+            </div>
+
+            <!-- ------------------------------ -->
 
             {# Aqui vamos meter os messagens flash #}
             {% for message in app.flashes('success') %}
