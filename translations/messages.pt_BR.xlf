@@ -349,5 +349,11 @@
         <target>Bem-vindo</target>
       </segment>
     </unit>
+    <unit id="KL7uhrb" name="button.change.profile.photo">
+      <segment>
+        <source>button.change.profile.photo</source>
+        <target>button.change.profile.photo</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

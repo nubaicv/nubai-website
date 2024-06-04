@@ -14,8 +14,10 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('js/cropper/cropper.css') }}">
 
-        <script type="module" src="{{ asset('js/controllers.js') }}"></script>
+        <script type="module" src="{{ asset('js/stimulus/controllers.js') }}"></script>
+        <script src="{{ asset('js/cropper/cropper.js') }}"></script>
     </head>
     <body>
 
@@ -24,9 +26,10 @@
         <main class="w3-container w3-white w3-padding-16">
 
             <!-- Stimulus -->
-            <div data-controller="content-loader"
+            <!-- <div data-controller="content-loader"
                  data-content-loader-url-value="/html"
-                 data-content-loader-refresh-interval-value="5000"></div>
+                 data-content-loader-refresh-interval-value="5000">
+            </div>
             <div data-controller="slideshow" data-slideshow-index-value="1">
                 <button data-action="slideshow#previous"> ← </button>
                 <button data-action="slideshow#next"> → </button>
@@ -52,7 +55,7 @@
                     <option>Option 3</option>
                 </select>
                 <span data-selector-target="output"></span>
-            </div>
+            </div> -->
 
             <!-- ------------------------------ -->
 
