@@ -8,7 +8,7 @@
 
     <h1>{% trans %}my.profile{% endtrans %}</h1>
     <div class="w3-row">
-        <div class="w3-quarter">
+        <div class="w3-quarter" id="profile-photo-wrapper">
             <img src="{{ asset('icon-profile.png', 'files')  }}" alt="profile-photo" class="w3-border w3-padding w3-image" id="profile-photo">
             <div>
                 <button>{% trans %}button.change.profile.photo{% endtrans %}</button>
@@ -16,23 +16,12 @@
         </div>
         <div class="w3-threequarter">
             <img src="{{ asset('GettyImages-1285126883-scaled.jpg', 'files')  }}" alt="photo-to-crop" class="w3-border w3-padding w3-image" id="photo-to-crop">
+            <div>
+                <button id="button-crop">{% trans %}button.crop{% endtrans %}</button>
+            </div>
         </div>
     </div>
 
-    <script>
-        const image = document.getElementById('photo-to-crop');
-        const cropper = new Cropper(image, {
-            aspectRatio: 1 / 1,
-            crop(event) {
-                console.log(event.detail.x);
-                console.log(event.detail.y);
-                console.log(event.detail.width);
-                console.log(event.detail.height);
-                console.log(event.detail.rotate);
-                console.log(event.detail.scaleX);
-                console.log(event.detail.scaleY);
-            }
-        });
-    </script>
+    <script type="text/javascript" src="{{ asset('js/nubai_cropper.js') }}"></script>
 
 {% endblock %}

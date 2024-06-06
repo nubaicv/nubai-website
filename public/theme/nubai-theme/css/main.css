@@ -42,3 +42,8 @@ body > footer {
 .clipboard--supported .clipboard-button {
     display: initial;
 }
+
+.cropper-view-box,
+.cropper-face {
+    border-radius: 50%;
+}

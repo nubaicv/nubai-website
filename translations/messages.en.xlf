@@ -349,5 +349,11 @@
         <target>button.change.profile.photo</target>
       </segment>
     </unit>
+    <unit id="uMmJ8D9" name="button.crop">
+      <segment>
+        <source>button.crop</source>
+        <target>button.crop</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
