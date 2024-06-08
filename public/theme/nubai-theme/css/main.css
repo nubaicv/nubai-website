@@ -43,6 +43,11 @@ body > footer {
     display: initial;
 }
 
+#profile-photo-wrapper {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
 .cropper-view-box,
 .cropper-face {
     border-radius: 50%;
