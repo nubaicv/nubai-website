@@ -7,7 +7,7 @@
 {% block main %}
     <h1>{% trans %}my.profile{% endtrans %}</h1>
 
-    <div class="" data-controller="cropper">
+    <div data-controller="cropper">
 
         <div id="profile-photo-zone" class="w3-center">
             <div id="profile-photo-wrapper">
@@ -25,7 +25,7 @@
                 <div class="w3-container blu-nubai">
                     <div id="cropper-zone" class="w3-center">
                         <div id="photo-to-crop-wrapper">
-                            <img src="{{ asset('GettyImages-1285126883-scaled.jpg', 'files')  }}" alt="photo-to-crop" class="w3-image" id="photo-to-crop">
+                            <img src="{{ asset('GettyImages-1285126883-scaled.jpg', 'files')  }}" alt="photo-to-crop" class="w3-image" id="photo-to-crop" data-cropper-target="image">
                         </div>
                         <div class="w3-section">
                             <button>{% trans %}button.load.image.to.crop{% endtrans %}</button>
@@ -35,6 +35,7 @@
                 </div>
             </div>
         </div>
+                        
     </div>
 
 {% endblock %}

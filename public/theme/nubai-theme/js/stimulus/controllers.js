@@ -1,13 +1,29 @@
 import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
         window.Stimulus = Application.start();
 
+// Main menu controller
+Stimulus.register("mainmenu", class extends Controller {
+    
+    static targets = [];
+    
+    open() {
+        document.getElementById('menu-modal').style.display = 'block';
+    }
+    
+    close() {
+        document.getElementById('menu-modal').style.display = 'none';
+    }
+});
+
 
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
+    
 
     uploadImage() {
-
+        
         const image = document.getElementById('photo-to-crop');
+
         const cropper = new Cropper(image, {
             aspectRatio: 1 / 1,
             zoomable: false

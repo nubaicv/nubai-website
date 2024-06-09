@@ -100,33 +100,37 @@
 
         {% setcontent warning = 'blocks/website-warning' %}
 
-        <div id="menu-modal" class="w3-modal">
-            <div class="w3-modal-content">
-                <div class="w3-bar">
-                    <span onclick="close_menu_modal();" class="w3-bar-item w3-button w3-right"><i class="fa-solid fa-xmark blue-nubai"></i></span>
-                </div>
-                <div class="w3-container blu-nubai">
-                    <nav>
-                        <h2>Menu</h2>
-                        <ul class="w3-ul blue-nubai">
-                            <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
-                            <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
-                        </ul>
-                        {% if app.user is null %}
-                            <div class="w3-bar">
-                                <a href="{{ path('login_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-to-bracket"></i> {% trans %}button.login{% endtrans %}</a>
-                                <a href="{{ path('register_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-user-plus"></i> {% trans %}button.create.new.account{% endtrans %}</a>
-                            </div>
-                        {% else %}
-                            <div class="w3-bar">
-                                <a href="{{ path('profile_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-gear"></i> {{ app.user.userIdentifier }}</a>
-                                <a href="{{ path('logout_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-from-bracket"></i> {% trans %}button.logout{% endtrans %}</a>
-                            </div>
-                        {% endif %}
-                    </nav>
-                    <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+        <div data-controller="mainmenu">
+
+            <div id="menu-modal" class="w3-modal">
+                <div class="w3-modal-content">
+                    <div class="w3-bar">
+                        <span class="w3-bar-item w3-button w3-right" data-action="click->mainmenu#close"><i class="fa-solid fa-xmark blue-nubai"></i></span>
+                    </div>
+                    <div class="w3-container blu-nubai">
+                        <nav>
+                            <h2>Menu</h2>
+                            <ul class="w3-ul blue-nubai">
+                                <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
+                                <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
+                            </ul>
+                            {% if app.user is null %}
+                                <div class="w3-bar">
+                                    <a href="{{ path('login_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-to-bracket"></i> {% trans %}button.login{% endtrans %}</a>
+                                    <a href="{{ path('register_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-user-plus"></i> {% trans %}button.create.new.account{% endtrans %}</a>
+                                </div>
+                            {% else %}
+                                <div class="w3-bar">
+                                    <a href="{{ path('profile_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-gear"></i> {{ app.user.userIdentifier }}</a>
+                                    <a href="{{ path('logout_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-from-bracket"></i> {% trans %}button.logout{% endtrans %}</a>
+                                </div>
+                            {% endif %}
+                        </nav>
+                        <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         {{ include('partials/_footer.twig') }}
