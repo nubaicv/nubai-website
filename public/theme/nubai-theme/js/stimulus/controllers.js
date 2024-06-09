@@ -3,46 +3,64 @@ import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/di
 
 // Main menu controller
 Stimulus.register("mainmenu", class extends Controller {
-    
-    static targets = [];
-    
+    static targets = [ "modal" ];
+
     open() {
+//        this.modalTarget.style.display = 'block';
         document.getElementById('menu-modal').style.display = 'block';
     }
-    
+
     close() {
-        document.getElementById('menu-modal').style.display = 'none';
+        this.modalTarget.style.display = 'none';
+//        document.getElementById('menu-modal').style.display = 'none';
     }
 });
 
 
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
-    
+    static targets = ["modal", "cropimage", "profileimage"]
+
+    initialize() {
+
+        this.cropper;
+    }
 
     uploadImage() {
-        
-        const image = document.getElementById('photo-to-crop');
 
-        const cropper = new Cropper(image, {
-            aspectRatio: 1 / 1,
-            zoomable: false
-        });
+        this.modalTarget.style.display = 'block';
 
-        document.querySelector('#button-crop').addEventListener('click', function () {
-            var croppedImage = cropper.getCroppedCanvas();
-            var roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
-            document.getElementById('profile-photo').src = roundedImage;
-        });
-        
-        open_cropper_modal();
+        if (isEmpty(this.cropper)) {
+            this.cropper = new Cropper(this.cropimageTarget, {
+                aspectRatio: 1 / 1,
+                zoomable: false
+            });
+        }
 
-// ------------------
+        function isEmpty(obj) {
+            for (const prop in obj) {
+                if (Object.hasOwn(obj, prop)) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
+    cropImage() {
+
+        const croppedImage = this.cropper.getCroppedCanvas();
+        const roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
+        this.profileimageTarget.src = roundedImage;
+
+        this.modalTarget.style.display = 'none';
+
         function getRoundedCanvas(sourceCanvas) {
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            var width = sourceCanvas.width;
-            var height = sourceCanvas.height;
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            const width = sourceCanvas.width;
+            const height = sourceCanvas.height;
 
             canvas.width = width;
             canvas.height = height;
@@ -56,11 +74,15 @@ Stimulus.register("cropper", class extends Controller {
         }
     }
 
-    cropImage() {
-        
-        close_cropper_modal();
+    closeModal() {
+
+        this.modalTarget.style.display = 'none';
     }
 });
+
+
+
+
 
 // Content-loader controller
 Stimulus.register("content-loader", class extends Controller {
