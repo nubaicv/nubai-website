@@ -14,13 +14,16 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="{{ asset('css/fontawesome-free-6.0.0-beta2-web/css/all.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('js/cropper/cropper.css') }}">
+
+        <script type="module" src="{{ asset('js/stimulus/controllers.js') }}"></script>
+        <script src="{{ asset('js/cropper/cropper.js') }}"></script>
     </head>
     <body>
 
         {{ include('partials/_header.twig') }}
 
         <main class="w3-container w3-white w3-padding-16">
-
             {# Aqui vamos meter os messagens flash #}
             {% for message in app.flashes('success') %}
                 <div class="w3-panel w3-display-container w3-pale-green w3-text-green w3-border w3-padding-16">
@@ -62,31 +65,37 @@
 
         {% setcontent warning = 'blocks/website-warning' %}
 
-        <div id="menu-modal" class="w3-modal">
-            <div class="w3-modal-content">
-                <div class="w3-container blu-nubai w3-padding-16">
-                    <span onclick="close_menu_modal();" class="w3-button w3-display-topright"><i class="fa-solid fa-xmark blue-nubai"></i></span>
-                    <nav>
-                        <h2>Menu</h2>
-                        <ul class="w3-ul blue-nubai">
-                            <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
-                            <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
-                        </ul>
-                        {% if app.user is null %}
-                            <div class="w3-bar">
-                                <a href="{{ path('login_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-to-bracket"></i> {% trans %}button.login{% endtrans %}</a>
-                                <a href="{{ path('register_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-user-plus"></i> {% trans %}button.create.new.account{% endtrans %}</a>
-                            </div>
-                        {% else %}
-                            <div class="w3-bar">
-                                <a href="{{ path('profile_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-gear"></i> {{ app.user.userIdentifier }}</a>
-                                <a href="{{ path('logout_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-from-bracket"></i> {% trans %}button.logout{% endtrans %}</a>
-                            </div>
-                        {% endif %}
-                    </nav>
-                    <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+        <div data-controller="mainmenu">
+
+            <div id="menu-modal" class="w3-modal" data-mainmenu-target="modal">
+                <div class="w3-modal-content">
+                    <div class="w3-bar">
+                        <span class="w3-bar-item w3-button w3-right" data-action="click->mainmenu#close"><i class="fa-solid fa-xmark blue-nubai"></i></span>
+                    </div>
+                    <div class="w3-container w3-section blu-nubai">
+                        <nav>
+                            <h2>Menu</h2>
+                            <ul class="w3-ul blue-nubai">
+                                <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
+                                <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
+                            </ul>
+                            {% if app.user is null %}
+                                <div class="w3-bar">
+                                    <a href="{{ path('login_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-to-bracket"></i> {% trans %}button.login{% endtrans %}</a>
+                                    <a href="{{ path('register_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-user-plus"></i> {% trans %}button.create.new.account{% endtrans %}</a>
+                                </div>
+                            {% else %}
+                                <div class="w3-bar">
+                                    <a href="{{ path('profile_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-gear"></i> {{ app.user.userIdentifier }}</a>
+                                    <a href="{{ path('logout_nubai') }}" class="w3-button blue-nubai-bg w3-text-white w3-section"><i class="fa-solid fa-right-from-bracket"></i> {% trans %}button.logout{% endtrans %}</a>
+                                </div>
+                            {% endif %}
+                        </nav>
+                        <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         {{ include('partials/_footer.twig') }}

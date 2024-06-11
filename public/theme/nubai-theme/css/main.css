@@ -34,3 +34,21 @@ body > footer {
     color: red;
     list-style-type: none;
 }
+
+.clipboard-button {
+    display: none;
+}
+
+.clipboard--supported .clipboard-button {
+    display: initial;
+}
+
+#profile-photo-wrapper {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.cropper-view-box,
+.cropper-face {
+    border-radius: 50%;
+}
