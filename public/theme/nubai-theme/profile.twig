@@ -11,10 +11,10 @@
 
         <div id="profile-photo-zone" class="w3-center">
             <div id="profile-photo-wrapper">
-                <img src="{{ asset('icon-profile.png', 'files') }}" alt="profile-photo" class="w3-border w3-padding w3-image" id="profile-photo" data-cropper-target="profileimage">
+                <img src="{{ asset('icon-profile.png', 'files') }}" alt="profile-photo" class="w3-border w3-padding w3-image w3-circle" id="profile-photo" data-cropper-target="profileimage">
             </div>
             <div class="w3-section">
-                <button data-action="click->cropper#uploadImage">{% trans %}button.change.profile.photo{% endtrans %}</button>
+                <button data-action="click->cropper#uploadImage" class="w3-button blue-nubai-bg w3-text-white"><i class="fa-solid fa-camera"></i></button>
             </div>
         </div>
         <div id="cropper-modal" class="w3-modal" data-cropper-target="modal">
@@ -22,14 +22,14 @@
                 <div class="w3-bar">
                     <span class="w3-bar-item w3-button w3-right" data-action="click->cropper#closeModal"><i class="fa-solid fa-xmark blue-nubai"></i></span>
                 </div>
-                <div class="w3-container blu-nubai">
+                <div class="w3-container w3-section blu-nubai">
                     <div id="cropper-zone" class="w3-center">
                         <div id="photo-to-crop-wrapper">
                             <img src="{{ asset('GettyImages-1285126883-scaled.jpg', 'files')  }}" alt="photo-to-crop" class="w3-image" id="photo-to-crop" data-cropper-target="cropimage">
                         </div>
                         <div class="w3-section">
-                            <button>{% trans %}button.load.image.to.crop{% endtrans %}</button>
-                            <button id="button-crop" data-action="click->cropper#cropImage">{% trans %}button.accept.crop{% endtrans %}</button>
+                            <button class="w3-button blue-nubai-bg w3-text-white">{% trans %}button.load.image.to.crop{% endtrans %}</button>
+                            <button id="button-crop" class="w3-button blue-nubai-bg w3-text-white" data-action="click->cropper#cropImage">{% trans %}button.accept.crop{% endtrans %}</button>
                         </div>
                     </div>
                 </div>
