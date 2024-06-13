@@ -3,7 +3,7 @@ import { Application, Controller } from "https://unpkg.com/@hotwired/stimulus/di
 
 // Main menu controller
 Stimulus.register("mainmenu", class extends Controller {
-    static targets = [ "modal" ];
+    static targets = ["modal"];
 
     open() {
         document.getElementById('menu-modal').style.display = 'block';
@@ -14,36 +14,38 @@ Stimulus.register("mainmenu", class extends Controller {
     }
 });
 
-
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
-    static targets = ["modal", "cropimage", "profileimage"]
+    static targets = ["modal", "cropimage", "profileimage", "inputimage"]
 
     initialize() {
 
         this.cropper;
     }
 
-    uploadImage() {
+    changeImage() {
+        
+        if (!this.inputimageTarget.files[0]) {
+            alert('Error');
+            return;
+        }
+        
+        //Determina extensao do ficheiro carregado
+        const fileExtension = this.inputimageTarget.value.substring(
+                this.inputimageTarget.value.lastIndexOf('.'), this.inputimageTarget.value.lenght
+                );
+        // Vamos utilizar fileExtension para verificar si o ficheiro carregado e permitido.
+        // --------------------------
+
+        const inputImageURL = URL.createObjectURL(this.inputimageTarget.files[0]);
+        this.cropimageTarget.src = inputImageURL;
 
         this.modalTarget.style.display = 'block';
 
-        if (isEmpty(this.cropper)) {
-            this.cropper = new Cropper(this.cropimageTarget, {
-                aspectRatio: 1 / 1,
-                zoomable: false
-            });
-        }
-
-        function isEmpty(obj) {
-            for (const prop in obj) {
-                if (Object.hasOwn(obj, prop)) {
-                    return false;
-                }
-            }
-
-            return true;
-        }
+        this.cropper = new Cropper(this.cropimageTarget, {
+            aspectRatio: 1 / 1,
+            zoomable: false
+        });
     }
 
     cropImage() {
@@ -53,6 +55,7 @@ Stimulus.register("cropper", class extends Controller {
         this.profileimageTarget.src = roundedImage;
 
         this.modalTarget.style.display = 'none';
+        this.cropper.destroy();
 
         function getRoundedCanvas(sourceCanvas) {
             const canvas = document.createElement('canvas');
@@ -75,5 +78,6 @@ Stimulus.register("cropper", class extends Controller {
     closeModal() {
 
         this.modalTarget.style.display = 'none';
+        this.cropper.destroy();
     }
 });
