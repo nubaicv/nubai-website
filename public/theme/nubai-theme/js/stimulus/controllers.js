@@ -17,19 +17,29 @@ Stimulus.register("mainmenu", class extends Controller {
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
     static targets = ["modal", "cropimage", "profileimage", "inputimage"]
+    static values = { url: String }
 
     initialize() {
 
         this.cropper;
+        this.uploadProfileImage = function () {
+            const xhttp = new XMLHttpRequest();
+            const url = this.urlValue;
+            xhttp.onload = function () {
+                alert(this.responseText);
+            };
+            xhttp.open('post', url);
+            xhttp.send('profile_image=theimage&fr=po');
+        };
     }
 
     changeImage() {
-        
+
         if (!this.inputimageTarget.files[0]) {
             alert('Error');
             return;
         }
-        
+
         //Determina extensao do ficheiro carregado
         const fileExtension = this.inputimageTarget.value.substring(
                 this.inputimageTarget.value.lastIndexOf('.'), this.inputimageTarget.value.lenght
@@ -52,6 +62,14 @@ Stimulus.register("cropper", class extends Controller {
 
         const croppedImage = this.cropper.getCroppedCanvas();
         const roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
+
+        // Upload roundedImage e guardar URL na DB
+
+        this.uploadProfileImage();
+
+        // -------------------------------------------
+
+
         this.profileimageTarget.src = roundedImage;
 
         this.modalTarget.style.display = 'none';

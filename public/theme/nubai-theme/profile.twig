@@ -7,7 +7,7 @@
 {% block main %}
     <h1>{% trans %}my.profile{% endtrans %}</h1>
 
-    <div data-controller="cropper">
+    <div data-controller="cropper" data-cropper-url-value="{{ path('upload-image-profile_nubai') }}">
 
         <div id="profile-photo-zone" class="w3-center">
             <div id="profile-photo-wrapper">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-                        
+
     </div>
 
 {% endblock %}

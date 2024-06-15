@@ -31,7 +31,7 @@ class ProfileController extends TwigAwareController {
         ]);
     }
 
-    #[Route('/{_locale}/my-profile/image', name: 'imageprofile_nubai', methods: ['GET', 'POST', 'DELETE'])]
+    #[Route('/{_locale}/my-profile/upload-profile-image', name: 'upload-image-profile_nubai', methods: ['GET', 'POST', 'DELETE'])]
     public function uploadImage(Request $request): Response {
 
 
@@ -40,13 +40,33 @@ class ProfileController extends TwigAwareController {
 //            return $this->redirectToRoute('login_nubai');
 //        }
 
-        $email = $request->getSession()->get('_security.last_username');
-        $user = $this->em->getRepository(Customer::class)->findOneBy([
-            'email' => $email,
-        ]);
+        $method = $request->getMethod();
+        switch ($method) {
+
+            case 'GET':
+                $data = $request->query->all();
+                break;
+            case 'POST':
+//                return new Response('Ok found', 200);
+                $data = $request->request->all();
+                if (!$data) {
+                    return new Response('No data', 200);
+                } else {
+                    return new Response('Yes data', 200);
+                }
+                break;
+            case 'DELETE':
+                $data = 'Temos DELETE';
+                break;
+        }
+
+//        $email = $request->getSession()->get('_security.last_username');
+//        $user = $this->em->getRepository(Customer::class)->findOneBy([
+//            'email' => $email,
+//        ]);
 
         return $this->render('@theme/profilee.twig', [
-                    'data' => $user,
+                    'data' => $data,
         ]);
     }
 }
