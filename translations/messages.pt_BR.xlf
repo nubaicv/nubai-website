@@ -355,5 +355,17 @@
         <target>Aceitar</target>
       </segment>
     </unit>
+    <unit id="C4WD99X" name="no.image.file.data">
+      <segment>
+        <source>no.image.file.data</source>
+        <target>no.image.file.data</target>
+      </segment>
+    </unit>
+    <unit id="qZawcrn" name="profile.image.saved">
+      <segment>
+        <source>profile.image.saved</source>
+        <target>profile.image.saved</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

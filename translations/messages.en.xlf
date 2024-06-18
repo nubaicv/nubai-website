@@ -349,5 +349,11 @@
         <target>Accept</target>
       </segment>
     </unit>
+    <unit id="C4WD99X" name="no.image.file.data">
+      <segment>
+        <source>no.image.file.data</source>
+        <target>no.image.file.data</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

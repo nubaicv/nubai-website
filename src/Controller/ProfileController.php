@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Customer;
+use App\Helper\ProfileHelper;
 use Bolt\Controller\TwigAwareController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
 class ProfileController extends TwigAwareController {
@@ -32,8 +33,8 @@ class ProfileController extends TwigAwareController {
         ]);
     }
 
-    #[Route('/{_locale}/my-profile/upload-profile-image', name: 'upload-image-profile_nubai', methods: ['GET', 'POST', 'DELETE'])]
-    public function uploadImage(Request $request): Response {
+    #[Route('/{_locale}/my-profile/upload-profile-image', name: 'upload-image-profile_nubai')]
+    public function uploadImage(Request $request, ProfileHelper $profileHelper, TranslatorInterface $translator) {
 
 
 //        if (!$this->isGranted('ROLE_USER')) {
@@ -43,37 +44,29 @@ class ProfileController extends TwigAwareController {
 
         $method = $request->getMethod();
         switch ($method) {
-
+            
             case 'GET':
-                $data = $request->query->all();
-                break;
+                
+                return new Response($translator->trans('no.image.file.data'), 200);
             case 'POST':
-//                return new Response('Ok found', 200);
+                
                 $file = $request->files->get('profileimage');
-                if (!$file) {
+                if ($file) {
                     
-                    return new Response('No file data', 200);
+                    $email = $request->getSession()->get('_security.last_username');
+                    $user = $this->em->getRepository(Customer::class)->findOneBy([
+                        'email' => $email,
+                    ]);
+                    $profileHelper->saveImage($file, $user);
+                    return new Response($translator->trans('profile.image.saved'), 200);
                 } else {
-                    
-                    $destination = $this->getParameter('kernel.project_dir') . '/public/profile_images';
-                    $filename = md5(uniqid()) . '.' . $file->getClientOriginalExtension();
-                    
-                    $file->move($destination, $filename);
-                    return new Response('Image saved!', 200);
+
+                    return new Response($translator->trans('no.image.file.data'), 200);
                 }
                 break;
-            case 'DELETE':
-                $data = 'Temos DELETE';
-                break;
+            default:
+                
+                return new Response($translator->trans('no.image.file.data'), 200);
         }
-
-//        $email = $request->getSession()->get('_security.last_username');
-//        $user = $this->em->getRepository(Customer::class)->findOneBy([
-//            'email' => $email,
-//        ]);
-
-        return $this->render('@theme/profilee.twig', [
-                    'data' => $data,
-        ]);
     }
 }
