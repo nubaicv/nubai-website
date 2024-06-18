@@ -17,19 +17,23 @@ Stimulus.register("mainmenu", class extends Controller {
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
     static targets = ["modal", "cropimage", "profileimage", "inputimage"]
-    static values = { url: String }
+    static values = {url: String}
 
     initialize() {
 
         this.cropper;
-        this.uploadProfileImage = function () {
+        this.uploadProfileImage = function (image) {
             const xhttp = new XMLHttpRequest();
             const url = this.urlValue;
             xhttp.onload = function () {
                 alert(this.responseText);
             };
-            xhttp.open('post', url);
-            xhttp.send('profile_image=theimage&fr=po');
+
+            let formData = new FormData();
+            formData.append("profileimage", image);
+
+            xhttp.open('post', url, true);
+            xhttp.send(formData);
         };
     }
 
@@ -61,11 +65,15 @@ Stimulus.register("cropper", class extends Controller {
     cropImage() {
 
         const croppedImage = this.cropper.getCroppedCanvas();
+        const roundedImageToUpload = getRoundedCanvas(croppedImage);
         const roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
 
         // Upload roundedImage e guardar URL na DB
 
-        this.uploadProfileImage();
+        const dataFile = dataURLtoFile(roundedImage, "imageName.png");
+
+        this.uploadProfileImage(dataFile);
+//        alert(this.inputimageTarget.files[0]);
 
         // -------------------------------------------
 
@@ -90,6 +98,15 @@ Stimulus.register("cropper", class extends Controller {
             context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true);
             context.fill();
             return canvas;
+        }
+
+        function dataURLtoFile(dataurl, filename) {
+            var arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new File([u8arr], filename, {type: mime});
         }
     }
 

@@ -6,6 +6,7 @@ use App\Entity\Customer;
 use Bolt\Controller\TwigAwareController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -48,11 +49,17 @@ class ProfileController extends TwigAwareController {
                 break;
             case 'POST':
 //                return new Response('Ok found', 200);
-                $data = $request->request->all();
-                if (!$data) {
-                    return new Response('No data', 200);
+                $file = $request->files->get('profileimage');
+                if (!$file) {
+                    
+                    return new Response('No file data', 200);
                 } else {
-                    return new Response('Yes data', 200);
+                    
+                    $destination = $this->getParameter('kernel.project_dir') . '/public/profile_images';
+                    $filename = md5(uniqid()) . '.' . $file->getClientOriginalExtension();
+                    
+                    $file->move($destination, $filename);
+                    return new Response('Image saved!', 200);
                 }
                 break;
             case 'DELETE':

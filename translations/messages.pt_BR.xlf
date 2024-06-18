@@ -349,22 +349,10 @@
         <target>Bem-vindo</target>
       </segment>
     </unit>
-    <unit id="KL7uhrb" name="button.change.profile.photo">
-      <segment>
-        <source>button.change.profile.photo</source>
-        <target>Mudar imagem</target>
-      </segment>
-    </unit>
     <unit id="PWXwWHM" name="button.accept.crop">
       <segment>
         <source>button.accept.crop</source>
         <target>Aceitar</target>
-      </segment>
-    </unit>
-    <unit id="Vt3SKVk" name="button.load.image.to.crop">
-      <segment>
-        <source>button.load.image.to.crop</source>
-        <target>Carregar...</target>
       </segment>
     </unit>
   </file>
