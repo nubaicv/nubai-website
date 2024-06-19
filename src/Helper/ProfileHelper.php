@@ -23,6 +23,23 @@ class ProfileHelper {
         $this->em = $em;
         $this->uploadDirectory = $uploadDirectory;
     }
+    
+    public function isValidImage(UploadedFile $file): bool {
+        
+        $maxFileSize = 5 * 1024 * 1024;
+        
+        if (!$file && !$file->isValid()) {
+            
+            return false;
+        }
+        
+        if ($file->getSize() > $maxFileSize) {
+            
+            return false;
+        }
+        
+        return true;
+    }
 
     public function saveImage(UploadedFile $file, Customer $user) {
 
@@ -30,7 +47,7 @@ class ProfileHelper {
 
             $filename = md5(uniqid()) . '.' . $file->getClientOriginalExtension();
             $file->move($this->uploadDirectory, $filename);
-        } catch (Exception $ex) {
+        } catch (\Exception $ex) {
             
             throw new \Exception(self::PROFILE_ERRORS['saveImageError']);
         }

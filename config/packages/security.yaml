@@ -64,12 +64,6 @@ security:
                 # where to redirect after logout
                 target: login_nubai
 
-            remember_me:
-                secret: '%kernel.secret%'
-                lifetime: 604800
-                path: /
-                always_remember_me: true
-
     access_control:
         # this is a catch-all for the admin area
         # additional security lives in the controllers

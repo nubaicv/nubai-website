@@ -33,40 +33,49 @@ class ProfileController extends TwigAwareController {
         ]);
     }
 
-    #[Route('/{_locale}/my-profile/upload-profile-image', name: 'upload-image-profile_nubai')]
-    public function uploadImage(Request $request, ProfileHelper $profileHelper, TranslatorInterface $translator) {
+    #[Route('/{_locale}/my-profile/image', name: 'image-profile_nubai')]
+    public function uploadImage(Request $request, ProfileHelper $profileHelper, TranslatorInterface $translator): Response {
 
 
-//        if (!$this->isGranted('ROLE_USER')) {
-//
-//            return $this->redirectToRoute('login_nubai');
-//        }
+        if (!$this->isGranted('ROLE_USER')) {
+
+            return new Response('authentication.error', 401);
+        }
 
         $method = $request->getMethod();
         switch ($method) {
             
-            case 'GET':
-                
-                return new Response($translator->trans('no.image.file.data'), 200);
             case 'POST':
-                
-                $file = $request->files->get('profileimage');
-                if ($file) {
-                    
-                    $email = $request->getSession()->get('_security.last_username');
-                    $user = $this->em->getRepository(Customer::class)->findOneBy([
-                        'email' => $email,
-                    ]);
-                    $profileHelper->saveImage($file, $user);
-                    return new Response($translator->trans('profile.image.saved'), 200);
-                } else {
 
-                    return new Response($translator->trans('no.image.file.data'), 200);
+                $email = $request->getSession()->get('_security.last_username');
+                $user = $this->em->getRepository(Customer::class)->findOneBy([
+                    'email' => $email,
+                ]);
+                if ($user === null) {
+                    return new Response('authentication.error', 401);
+                }
+
+                $file = $request->files->get('profileimage');
+                if (!$file) {
+                    return new Response('no.image.file.data', 500);
+                }
+                
+                if (!$profileHelper->isValidImage($file)) {
+                    return new Response('not.valid.image.file.data', 500);
+                }
+
+                try {
+                    
+                    $profileHelper->saveImage($file, $user);
+                    return new Response('profile.image.saved ' . $email, 200);
+                } catch (\Exception $ex) {
+
+                    return new Response($ex->getMessage(), 500);
                 }
                 break;
             default:
-                
-                return new Response($translator->trans('no.image.file.data'), 200);
+
+                return new Response('no.image.file.data', 500);
         }
     }
 }
