@@ -22,11 +22,29 @@ Stimulus.register("cropper", class extends Controller {
     initialize() {
 
         this.cropper;
+        this.roundedImage;
         this.uploadProfileImage = function (image) {
+
             const xhttp = new XMLHttpRequest();
             const url = this.urlValue;
-            xhttp.onload = function () {
-                alert(this.responseText);
+            const profileImageTarget = this.profileimageTarget;
+            const roundedImage = this.roundedImage;
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4) {
+
+                    switch (this.status) {
+                        case 200:
+                            profileImageTarget.src = roundedImage;
+                            break;
+                        case 400:
+                            alert(this.responseText);
+                            break;
+                        default:
+                            alert(this.responseText);
+                            break;
+                    }
+                }
             };
 
             let formData = new FormData();
@@ -37,7 +55,8 @@ Stimulus.register("cropper", class extends Controller {
         };
     }
 
-    changeImage() {
+    changeImage()
+    {
 
         if (!this.inputimageTarget.files[0]) {
             alert('Error');
@@ -66,22 +85,17 @@ Stimulus.register("cropper", class extends Controller {
 
         const croppedImage = this.cropper.getCroppedCanvas();
         const roundedImageToUpload = getRoundedCanvas(croppedImage);
-        const roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
+        this.roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
+        const dataFile = dataURLtoFile(this.roundedImage, "imageName.png");
 
-        // Upload roundedImage e guardar URL na DB
-
-        const dataFile = dataURLtoFile(roundedImage, "imageName.png");
-
+        // Upload roundedImage as File
         this.uploadProfileImage(dataFile);
-//        alert(this.inputimageTarget.files[0]);
-
-        // -------------------------------------------
-
-
-        this.profileimageTarget.src = roundedImage;
+        // --------------------------
 
         this.modalTarget.style.display = 'none';
         this.cropper.destroy();
+
+
 
         function getRoundedCanvas(sourceCanvas) {
             const canvas = document.createElement('canvas');

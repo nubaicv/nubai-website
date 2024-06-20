@@ -39,29 +39,31 @@ class ProfileController extends TwigAwareController {
 
         if (!$this->isGranted('ROLE_USER')) {
 
-            return new Response('authentication.error', 401);
+            return new Response($translator->trans('authentication.error'), 401);
         }
 
         $method = $request->getMethod();
         switch ($method) {
             
             case 'POST':
-
+                
+                // Tomamos o email do user desde a sessao para determinar o user (Customer)
                 $email = $request->getSession()->get('_security.last_username');
                 $user = $this->em->getRepository(Customer::class)->findOneBy([
                     'email' => $email,
                 ]);
+                // --------------------------------------------
                 if ($user === null) {
-                    return new Response('authentication.error', 401);
+                    return new Response($translator->trans('authentication.error'), 401);
                 }
 
                 $file = $request->files->get('profileimage');
                 if (!$file) {
-                    return new Response('no.image.file.data', 500);
+                    return new Response($translator->trans('no.image.file.data'), 400);
                 }
                 
                 if (!$profileHelper->isValidImage($file)) {
-                    return new Response('not.valid.image.file.data', 500);
+                    return new Response($translator->trans('not.valid.image.file.data'), 400);
                 }
 
                 try {
@@ -70,12 +72,12 @@ class ProfileController extends TwigAwareController {
                     return new Response('profile.image.saved ' . $email, 200);
                 } catch (\Exception $ex) {
 
-                    return new Response($ex->getMessage(), 500);
+                    return new Response($translator->trans($ex->getMessage()), 500);
                 }
                 break;
             default:
 
-                return new Response('no.image.file.data', 500);
+                return new Response($translator->trans('no.image.file.data'), 400);
         }
     }
 }

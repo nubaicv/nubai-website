@@ -349,5 +349,11 @@
         <target>Accept</target>
       </segment>
     </unit>
+    <unit id="lI.wjY2" name="not.valid.image.file.data">
+      <segment>
+        <source>not.valid.image.file.data</source>
+        <target>not.valid.image.file.data</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

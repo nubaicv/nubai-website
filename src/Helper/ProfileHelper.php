@@ -15,6 +15,7 @@ class ProfileHelper {
     ];
 
     private EntityManagerInterface $em;
+    
     // Injetado no constructor desde services.yaml
     private string $uploadDirectory;
 
@@ -29,12 +30,12 @@ class ProfileHelper {
         $maxFileSize = 5 * 1024 * 1024;
         
         if (!$file && !$file->isValid()) {
-            
             return false;
         }
         
+        // Resize the image here
+        
         if ($file->getSize() > $maxFileSize) {
-            
             return false;
         }
         
@@ -51,13 +52,5 @@ class ProfileHelper {
             
             throw new \Exception(self::PROFILE_ERRORS['saveImageError']);
         }
-    }
-    
-    private function removePreviousImage(Customer $user): void {
-        
-    }
-    
-    private function createFileName(Customer $user): string {
-        
     }
 }
