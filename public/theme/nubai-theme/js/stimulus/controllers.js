@@ -16,7 +16,7 @@ Stimulus.register("mainmenu", class extends Controller {
 
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
-    static targets = ["modal", "cropimage", "profileimage", "inputimage"]
+    static targets = ["modal", "cropimage", "profileimage", "inputimage", "messagemodal", "errormessage"]
     static values = {url: String}
 
     initialize() {
@@ -29,6 +29,8 @@ Stimulus.register("cropper", class extends Controller {
             const url = this.urlValue;
             const profileImageTarget = this.profileimageTarget;
             const roundedImage = this.roundedImage;
+            const messageModal = this.messagemodalTarget;
+            const errorMessage = this.errormessageTarget;
 
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4) {
@@ -38,10 +40,15 @@ Stimulus.register("cropper", class extends Controller {
                             profileImageTarget.src = roundedImage;
                             break;
                         case 400:
-                            alert(this.responseText);
+                            errorMessage.innerHTML = this.responseText;
+                            messageModal.style.display = 'block';
+                            break;
+                        case 401:
+                            location.reload();
                             break;
                         default:
-                            alert(this.responseText);
+                            errorMessage.innerHTML = this.responseText;
+                            messageModal.style.display = 'block';
                             break;
                     }
                 }
@@ -55,8 +62,7 @@ Stimulus.register("cropper", class extends Controller {
         };
     }
 
-    changeImage()
-    {
+    changeImage() {
 
         if (!this.inputimageTarget.files[0]) {
             alert('Error');
@@ -128,5 +134,10 @@ Stimulus.register("cropper", class extends Controller {
 
         this.modalTarget.style.display = 'none';
         this.cropper.destroy();
+    }
+    
+    closeMessageModal() {
+
+        this.messagemodalTarget.style.display = 'none';
     }
 });

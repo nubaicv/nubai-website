@@ -352,7 +352,19 @@
     <unit id="lI.wjY2" name="not.valid.image.file.data">
       <segment>
         <source>not.valid.image.file.data</source>
-        <target>not.valid.image.file.data</target>
+        <target>Image not valid. Try with a smaller picture</target>
+      </segment>
+    </unit>
+    <unit id="xc4g7UQ" name="authentication.error">
+      <segment>
+        <source>authentication.error</source>
+        <target>authentication.error</target>
+      </segment>
+    </unit>
+    <unit id="C4WD99X" name="no.image.file.data">
+      <segment>
+        <source>no.image.file.data</source>
+        <target>no.image.file.data</target>
       </segment>
     </unit>
   </file>

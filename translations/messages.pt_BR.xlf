@@ -358,7 +358,7 @@
     <unit id="lI.wjY2" name="not.valid.image.file.data">
       <segment>
         <source>not.valid.image.file.data</source>
-        <target>not.valid.image.file.data</target>
+        <target>Imagem não válida. Tente com uma imagem menor</target>
       </segment>
     </unit>
     <unit id="C4WD99X" name="no.image.file.data">
