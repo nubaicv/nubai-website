@@ -16,7 +16,7 @@ Stimulus.register("mainmenu", class extends Controller {
 
 // Cropper Controller
 Stimulus.register("cropper", class extends Controller {
-    static targets = ["modal", "cropimage", "profileimage", "inputimage", "messagemodal", "errormessage"]
+    static targets = ["modal", "cropimage", "profileimage", "inputimage", "messagemodal", "errormessage", "spinner"]
     static values = {url: String}
 
     initialize() {
@@ -27,14 +27,22 @@ Stimulus.register("cropper", class extends Controller {
 
             const xhttp = new XMLHttpRequest();
             const url = this.urlValue;
-            const profileImageTarget = this.profileimageTarget;
-            const roundedImage = this.roundedImage;
+            const profileImageTarget = this.profileimageTarget; // Por agora que estamos colocando a imagen directo do cropper.
+            const roundedImage = this.roundedImage; // Por agora
             const messageModal = this.messagemodalTarget;
             const errorMessage = this.errormessageTarget;
+            const spinner = this.spinnerTarget;
 
             xhttp.onreadystatechange = function () {
+                if (this.readyState === 1) {
+                    spinner.classList.remove('w3-hide');
+                }
+                if (this.readyState === 2) {
+                }
+                if (this.readyState === 3) {
+                }
                 if (this.readyState === 4) {
-
+                    spinner.classList.add('w3-hide');
                     switch (this.status) {
                         case 200:
                             profileImageTarget.src = roundedImage;
@@ -54,7 +62,7 @@ Stimulus.register("cropper", class extends Controller {
                 }
             };
 
-            let formData = new FormData();
+            const formData = new FormData();
             formData.append("profileimage", image);
 
             xhttp.open('post', url, true);
@@ -93,21 +101,19 @@ Stimulus.register("cropper", class extends Controller {
         const roundedImageToUpload = getRoundedCanvas(croppedImage);
         this.roundedImage = getRoundedCanvas(croppedImage).toDataURL("image/png");
         const dataFile = dataURLtoFile(this.roundedImage, "imageName.png");
-
-        // Upload roundedImage as File
-        this.uploadProfileImage(dataFile);
-        // --------------------------
-
+        
         this.modalTarget.style.display = 'none';
         this.cropper.destroy();
 
-
+        // Upload roundedImage as File
+        this.uploadProfileImage(dataFile);
+        // --------------------------        
 
         function getRoundedCanvas(sourceCanvas) {
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
-            const width = sourceCanvas.width;
-            const height = sourceCanvas.height;
+            const width = 400;
+            const height = 400;
 
             canvas.width = width;
             canvas.height = height;

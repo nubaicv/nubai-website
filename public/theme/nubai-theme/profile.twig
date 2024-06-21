@@ -5,13 +5,14 @@
 {% endblock %}
 
 {% block main %}
-    <h1>{% trans %}my.profile{% endtrans %}</h1>
+    <h2>{% trans %}my.profile{% endtrans %}</h2>
 
     <div data-controller="cropper" data-cropper-url-value="{{ path('image-profile_nubai') }}">
 
         <div id="profile-photo-zone" class="w3-center">
-            <div id="profile-photo-wrapper">
+            <div id="profile-photo-wrapper" class="w3-display-container">
                 <img src="{{ asset('icon-profile.png', 'files') }}" alt="profile-photo" class="w3-border w3-padding w3-image w3-circle" id="profile-photo" data-cropper-target="profileimage">
+                <span class="w3-display-middle blue-nubai w3-hide" data-cropper-target="spinner"><i class="fa-solid fa-spinner fa-3x fa-spin-pulse"></i></span>
             </div>
             <div class="w3-section">
                 <label for="image-source" class="w3-button blue-nubai-bg w3-text-white"><i class="fa-solid fa-camera"></i></label>
@@ -40,7 +41,7 @@
                 <div class="w3-bar">
                     <span class="w3-bar-item w3-button w3-right" data-action="click->cropper#closeMessageModal"><i class="fa-solid fa-xmark blue-nubai"></i></span>
                 </div>
-                <div class="w3-container w3-section blu-nubai">
+                <div class="w3-container blu-nubai">
                     <div class="w3-panel w3-display-container w3-pale-red w3-text-red w3-border w3-padding-16">
                         <i class="fa-solid fa-bomb"></i> <span data-cropper-target="errormessage"></span>
                     </div>

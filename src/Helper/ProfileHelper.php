@@ -27,13 +27,15 @@ class ProfileHelper {
     
     public function isValidImage(UploadedFile $file): bool {
         
-        $maxFileSize = 5 * 1024 * 1024;
+        $maxFileSize = 1 * 1024 * 1024;
         
         if (!$file && !$file->isValid()) {
             return false;
         }
         
-        // Resize the image here
+        if ($file->getClientMimeType() !== 'image/png') {
+            return false;
+        }
         
         if ($file->getSize() > $maxFileSize) {
             return false;

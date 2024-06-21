@@ -328,7 +328,7 @@
     <unit id="hBNESu6" name="my.profile">
       <segment>
         <source>my.profile</source>
-        <target>Meu perfil</target>
+        <target>Minha conta</target>
       </segment>
     </unit>
     <unit id="CxUhURY" name="button.logout">
@@ -358,13 +358,25 @@
     <unit id="lI.wjY2" name="not.valid.image.file.data">
       <segment>
         <source>not.valid.image.file.data</source>
-        <target>Imagem não válida. Tente com uma imagem menor</target>
+        <target>Imagem não válida, tente uma imagem menor.</target>
+      </segment>
+    </unit>
+    <unit id="xc4g7UQ" name="authentication.error">
+      <segment>
+        <source>authentication.error</source>
+        <target>Erro de autenticação</target>
       </segment>
     </unit>
     <unit id="C4WD99X" name="no.image.file.data">
       <segment>
         <source>no.image.file.data</source>
         <target>no.image.file.data</target>
+      </segment>
+    </unit>
+    <unit id="cjGAFiH" name="button.my.profile">
+      <segment>
+        <source>button.my.profile</source>
+        <target>Minha conta</target>
       </segment>
     </unit>
   </file>
