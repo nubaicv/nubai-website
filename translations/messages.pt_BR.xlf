@@ -379,5 +379,29 @@
         <target>Minha conta</target>
       </segment>
     </unit>
+    <unit id="zCvVR7e" name="error.saving.profile.image">
+      <segment>
+        <source>error.saving.profile.image</source>
+        <target>error.saving.profile.image</target>
+      </segment>
+    </unit>
+    <unit id="OB35D4_">
+      <segment>
+        <source>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images440fcbf1bb66de599940341de6b3ccde.png): No such file or directory</source>
+        <target>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images440fcbf1bb66de599940341de6b3ccde.png): No such file or directory</target>
+      </segment>
+    </unit>
+    <unit id="q_dmjrG">
+      <segment>
+        <source>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images/22f59d9803534567a4600e1c79537b72.png): No such file or directory</source>
+        <target>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images/22f59d9803534567a4600e1c79537b72.png): No such file or directory</target>
+      </segment>
+    </unit>
+    <unit id="SXECSqW" name="your email">
+      <segment>
+        <source>your email</source>
+        <target>your email</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

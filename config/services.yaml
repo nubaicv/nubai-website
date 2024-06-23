@@ -22,7 +22,7 @@ parameters:
     app.reset_password_lifetime: 10 # 10 minutes in minutes
     
     # O directorio donde sao guardados as fotos de perfil
-    app.profile_image_upload_directory: '%kernel.project_dir%/public/profile_images'
+    app.profile_image_upload_directory: '%kernel.project_dir%/public/theme/nubai-theme/profile_images'
 
 services:
     # default configuration for services in *this* file

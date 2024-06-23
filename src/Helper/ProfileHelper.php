@@ -43,16 +43,31 @@ class ProfileHelper {
         
         return true;
     }
-
-    public function saveImage(UploadedFile $file, Customer $user) {
+    
+    // 
+    public function saveImage(UploadedFile $file, Customer $user): void {
 
         try {
+            
+            // Apagamos a imagem de profile anterior se existir
+            $fileNameToRemove = $user->getProfilePhoto();
+            if ($fileNameToRemove && \file_exists($this->uploadDirectory . '/' . $fileNameToRemove)) {
+                \unlink($this->uploadDirectory . '/' . $fileNameToRemove);
+            }
 
             $filename = md5(uniqid()) . '.' . $file->getClientOriginalExtension();
-            $file->move($this->uploadDirectory, $filename);
+            $fileNameToSave = $file->move($this->uploadDirectory, $filename)->getFileName();
+            $user->setProfilePhoto($fileNameToSave);
+            $this->em->persist($user);
+            $this->em->flush();
         } catch (\Exception $ex) {
             
             throw new \Exception(self::PROFILE_ERRORS['saveImageError']);
         }
+    }
+    
+    public function getImagePath(Customer $user): string {
+        
+        return $this->uploadDirectory . '/' . $user->getProfilePhoto();
     }
 }

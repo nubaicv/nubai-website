@@ -44,9 +44,9 @@ class ProfileController extends TwigAwareController {
 
         $method = $request->getMethod();
         switch ($method) {
-            
+
             case 'POST':
-                
+
                 // Tomamos o email do user desde a sessao para determinar o user (Customer)
                 $email = $request->getSession()->get('_security.last_username');
                 $user = $this->em->getRepository(Customer::class)->findOneBy([
@@ -61,13 +61,13 @@ class ProfileController extends TwigAwareController {
                 if (!$file) {
                     return new Response($translator->trans('no.image.file.data'), 400);
                 }
-                
+
                 if (!$profileHelper->isValidImage($file)) {
                     return new Response($translator->trans('not.valid.image.file.data'), 400);
                 }
 
                 try {
-                    
+
                     $profileHelper->saveImage($file, $user);
                     return new Response('profile.image.saved ' . $email, 200);
                 } catch (\Exception $ex) {
