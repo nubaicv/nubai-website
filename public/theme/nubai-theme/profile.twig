@@ -11,7 +11,11 @@
 
         <div id="profile-photo-zone" class="w3-center">
             <div id="profile-photo-wrapper" class="w3-display-container">
-                <img src="{{ asset('profile_images/' ~ user.profilePhoto) }}" alt="profile-photo" class="w3-border w3-padding w3-image w3-circle" id="profile-photo" data-cropper-target="profileimage">
+                {% if app.user.profilePhoto is null %}
+                    <img src="{{ asset('icon-profile.png', 'files') }}" alt="profile-photo" class="w3-border w3-padding w3-image w3-circle" id="profile-photo" data-cropper-target="profileimage">
+                {% else %}
+                    <img src="{{ asset('profile_images/' ~ user.profilePhoto) }}" alt="profile-photo" class="w3-border w3-padding w3-image w3-circle" id="profile-photo" data-cropper-target="profileimage">
+                {% endif %}
                 <span class="w3-display-middle blue-nubai w3-hide" data-cropper-target="spinner"><i class="fa-solid fa-spinner fa-3x fa-spin-pulse"></i></span>
             </div>
             <div class="w3-section">
