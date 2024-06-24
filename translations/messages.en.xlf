@@ -361,16 +361,34 @@
         <target>Authentication error</target>
       </segment>
     </unit>
-    <unit id="C4WD99X" name="no.image.file.data">
-      <segment>
-        <source>no.image.file.data</source>
-        <target>no.image.file.data</target>
-      </segment>
-    </unit>
     <unit id="cjGAFiH" name="button.my.profile">
       <segment>
         <source>button.my.profile</source>
         <target>My account</target>
+      </segment>
+    </unit>
+    <unit id="v7AUERa" name="delete.account">
+      <segment>
+        <source>delete.account</source>
+        <target>Delete account</target>
+      </segment>
+    </unit>
+    <unit id="Ui9kdwg" name="p1.delete.account">
+      <segment>
+        <source>p1.delete.account</source>
+        <target>Once you delete your account, there is no going back. Please be certain.</target>
+      </segment>
+    </unit>
+    <unit id="T64mqHf" name="button.delete.account">
+      <segment>
+        <source>button.delete.account</source>
+        <target>Delete account</target>
+      </segment>
+    </unit>
+    <unit id="u6QHNfS" name="my.profile.photo">
+      <segment>
+        <source>my.profile.photo</source>
+        <target>Profile photo</target>
       </segment>
     </unit>
   </file>

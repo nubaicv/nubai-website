@@ -367,40 +367,34 @@
         <target>Erro de autenticação</target>
       </segment>
     </unit>
-    <unit id="C4WD99X" name="no.image.file.data">
-      <segment>
-        <source>no.image.file.data</source>
-        <target>no.image.file.data</target>
-      </segment>
-    </unit>
     <unit id="cjGAFiH" name="button.my.profile">
       <segment>
         <source>button.my.profile</source>
         <target>Minha conta</target>
       </segment>
     </unit>
-    <unit id="zCvVR7e" name="error.saving.profile.image">
+    <unit id="v7AUERa" name="delete.account">
       <segment>
-        <source>error.saving.profile.image</source>
-        <target>error.saving.profile.image</target>
+        <source>delete.account</source>
+        <target>Apagar conta</target>
       </segment>
     </unit>
-    <unit id="OB35D4_">
+    <unit id="Ui9kdwg" name="p1.delete.account">
       <segment>
-        <source>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images440fcbf1bb66de599940341de6b3ccde.png): No such file or directory</source>
-        <target>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images440fcbf1bb66de599940341de6b3ccde.png): No such file or directory</target>
+        <source>p1.delete.account</source>
+        <target>Depois de excluir sua conta, não há como voltar atrás. Por favor, tenha certeza.</target>
       </segment>
     </unit>
-    <unit id="q_dmjrG">
+    <unit id="T64mqHf" name="button.delete.account">
       <segment>
-        <source>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images/22f59d9803534567a4600e1c79537b72.png): No such file or directory</source>
-        <target>Warning: unlink(/home/ricardo/Projects/nubai-website/public/profile_images/22f59d9803534567a4600e1c79537b72.png): No such file or directory</target>
+        <source>button.delete.account</source>
+        <target>Apagar conta</target>
       </segment>
     </unit>
-    <unit id="SXECSqW" name="your email">
+    <unit id="u6QHNfS" name="my.profile.photo">
       <segment>
-        <source>your email</source>
-        <target>your email</target>
+        <source>my.profile.photo</source>
+        <target>Imagen de perfil</target>
       </segment>
     </unit>
   </file>
