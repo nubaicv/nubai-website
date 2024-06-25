@@ -5,8 +5,9 @@
             <a href="{{ path('homepage_locale') }}"><img src="{{ asset('nubai-logo2.png', 'files')  }}" alt="logo" title="O nosso logo" class="logo"></a>
         </div>
         <div class="w3-bar-item w3-bar w3-right">
-            <div class="w3-bar-item">
+            <div class="w3-bar-item w3-display-container">
                 <a href="#"><i class="fa-solid fa-cart-shopping fa-2x blue-nubai"></i></a>
+                <div id="cart-quantity" class="w3-display-topright w3-round-xxlarge w3-red">0</div>
             </div>
             <div class="w3-bar-item" data-controller="mainmenu">
                 <a href="#" data-action="click->mainmenu#open"><i class="fa-solid fa-bars fa-2x blue-nubai"></i></a>

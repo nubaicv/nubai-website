@@ -9,6 +9,11 @@ img.logo {
     width: 55px;
 }
 
+div#cart-quantity {
+    font-size: .8em;
+    padding: 4px;
+}
+
 h1 {
     font-family: "Rubik Mono One", monospace;
     font-weight: 400;

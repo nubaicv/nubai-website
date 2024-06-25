@@ -176,3 +176,50 @@ blocks:
 # data - text (65kb) - Read-only field, useful for storing (raw) data provided by an external source.
 # hidden - text (65kb) - Regular text field, except it is hidden from the content editor.
 # slug - text(65kb) - The slug for the record. Use with option `uses: [ title ]` to generate based on a title field.
+
+products:
+    name: Products
+    singular_name: Product
+    fields:
+        name:
+            type: text
+            variant: inline
+            label: "Nome do produto"
+            fixture_format: '{catchPhrase}'
+            localize: true
+            group: "Dados primarios"
+        teaser:
+            type: redactor
+            label: "Descricao corta"
+            localize: true
+        content:
+            type: redactor
+            label: "Descricao completa"
+            localize: true
+        images:
+            type: imagelist
+            label: Imagens
+        price1:
+            type: number
+            label: "Preco 1 (CVE)"
+            mode: integer
+            group: Numeros
+        slug:
+            type: slug
+            uses: [ nome ]
+            group: Meta
+        template:
+            type: templateselect
+            filter: '/^[^_].*\.twig$/'
+    show_on_dashboard: true
+    taxonomy: [ categories ]
+    viewless: false
+    default_status: published
+    searchable: true
+    order: -datepublish
+    listing_sort: -datepublish
+    listing_records: 12
+    icon_many: "fa:gifts"
+    icon_one: "fa:gift"
+    locales: [ 'pt_BR', 'en' ]
+            
