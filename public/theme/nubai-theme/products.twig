@@ -1,0 +1,43 @@
+{% extends 'partials/_master.twig' %}
+
+{% block title %}
+    {% trans %}list.products.header{% endtrans %} | Nubai
+{% endblock %}
+
+{% block main %}
+
+    <div id="product-list-container" class="w3-row">
+        {% for product in records %}
+            <article>
+
+                <div class="w3-container w3-third w3-padding-16">
+                    {% if product|image %}
+                        <a href="{{ product|link }}">
+                            <img src="{{ product|thumbnail(300, 180) }}" alt="{{ product|image.alt|default() }}" />
+                        </a>
+                    {% endif %}
+                    <h4 class=""><a href="{{ product|link }}">{{ product|title }}</a></h4>
+                    <p>{{ product.teaser }}</p>
+                    <span class="w3-red w3-round-small w3-padding-small w3-opacity">{{ product.price1|format_currency('CVE') }}</span>
+                </div>
+
+            </article>
+        {% else %}
+            <article>
+
+                <h2>{{ __('general.phrase.no-content-found') }}</h2>
+                <p>
+                    {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                </p>
+
+            </article>
+        {% endfor %}
+    </div>
+
+    {% if records is not null %}
+        <div id="pager-container">
+            {{ pager(records, template='partials/_pager.twig') }}
+        </div>
+    {% endif %}
+
+{% endblock main %}

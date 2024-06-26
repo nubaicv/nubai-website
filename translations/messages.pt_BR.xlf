@@ -397,5 +397,17 @@
         <target>Imagen de perfil</target>
       </segment>
     </unit>
+    <unit id="xaWvKLG" name="list.products.header">
+      <segment>
+        <source>list.products.header</source>
+        <target>Produtos</target>
+      </segment>
+    </unit>
+    <unit id="cmLGKcJ" name="menu.products">
+      <segment>
+        <source>menu.products</source>
+        <target>Productos</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -203,10 +203,12 @@ products:
             type: number
             label: "Preco 1 (CVE)"
             mode: integer
+            pattern: '/^[0-9]$/'
+            required: true
             group: Numeros
         slug:
             type: slug
-            uses: [ nome ]
+            uses: [ name ]
             group: Meta
         template:
             type: templateselect
@@ -218,8 +220,9 @@ products:
     searchable: true
     order: -datepublish
     listing_sort: -datepublish
-    listing_records: 12
+    listing_records: 3
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
+    listing_template: products.twig
     locales: [ 'pt_BR', 'en' ]
             

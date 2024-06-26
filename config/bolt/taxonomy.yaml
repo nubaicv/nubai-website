@@ -20,11 +20,11 @@ groups:
     required: false
 
 categories:
-    name: Categorias
+    name: Categories
     slug: categories
-    singular_name: Categoria
+    singular_name: Category
     singular_slug: category
     behaves_like: categories
     multiple: false
     options: [ computadores, alimentos ]
-    required: true
+    required: false

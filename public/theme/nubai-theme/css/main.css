@@ -9,11 +9,6 @@ img.logo {
     width: 55px;
 }
 
-div#cart-quantity {
-    font-size: .8em;
-    padding: 4px;
-}
-
 h1 {
     font-family: "Rubik Mono One", monospace;
     font-weight: 400;
@@ -63,4 +58,26 @@ body > footer {
 .cropper-view-box,
 .cropper-face {
     border-radius: 50%;
+}
+
+/* paginador */
+#pager-container ul.pagination {
+    display: flex;
+    list-style-type: none;
+}
+
+#pager-container ul.pagination > li {
+    margin: 0 8px;
+    padding: 16px;
+    background-color: #ccc;
+}
+
+#pager-container ul.pagination > li.active {
+    color: white;
+    background-color: black;
+}
+
+#pager-container ul.pagination a {
+    padding: 16px;
+    text-decoration: none;
 }

@@ -391,5 +391,17 @@
         <target>Profile photo</target>
       </segment>
     </unit>
+    <unit id="xaWvKLG" name="list.products.header">
+      <segment>
+        <source>list.products.header</source>
+        <target>Products</target>
+      </segment>
+    </unit>
+    <unit id="cmLGKcJ" name="menu.products">
+      <segment>
+        <source>menu.products</source>
+        <target>Products</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

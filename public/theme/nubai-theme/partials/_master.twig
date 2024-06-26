@@ -75,6 +75,7 @@
                             <ul class="w3-ul blue-nubai">
                                 <li><a href="{{ path('homepage_locale') }}">{% trans %}menu.home{% endtrans %}</a></li>
                                 <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'services' }) }}">{% trans %}menu.services{% endtrans %}</a></li>
+                                <li><a href="{{ path('listing_locale', { 'contentTypeSlug': 'products' }) }}">{% trans %}menu.products{% endtrans %}</a></li>
                             </ul>
                             {% if app.user is null %}
                                 <div class="w3-bar">
