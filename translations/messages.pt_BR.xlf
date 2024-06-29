@@ -409,5 +409,17 @@
         <target>Productos</target>
       </segment>
     </unit>
+    <unit id="AMxTho9" name="pager.previous">
+      <segment>
+        <source>pager.previous</source>
+        <target>Anterior</target>
+      </segment>
+    </unit>
+    <unit id="L_YQKUn" name="pager.next">
+      <segment>
+        <source>pager.next</source>
+        <target>Próximo</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

@@ -6,11 +6,11 @@
 
 {% block main %}
 
-    <div id="product-list-container" class="w3-row">
+    <div id="product-list-container">
         {% for product in records %}
-            <article>
+            <article class="w3-mobile">
 
-                <div class="w3-container w3-third w3-padding-16">
+                <div class="w3-container w3-padding-16">
                     {% if product|image %}
                         <a href="{{ product|link }}">
                             <img src="{{ product|thumbnail(300, 180) }}" alt="{{ product|image.alt|default() }}" />
@@ -35,7 +35,7 @@
     </div>
 
     {% if records is not null %}
-        <div id="pager-container">
+        <div id="pager-container" class="">
             {{ pager(records, template='partials/_pager.twig') }}
         </div>
     {% endif %}

@@ -60,21 +60,35 @@ body > footer {
     border-radius: 50%;
 }
 
+
+#product-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#product-list-container article {
+    width: 33%;
+}
+
+
 /* paginador */
 #pager-container ul.pagination {
     display: flex;
+    flex-wrap: wrap;
     list-style-type: none;
+    padding: 0;
 }
 
 #pager-container ul.pagination > li {
-    margin: 0 8px;
+    margin: 0 8px 8px 0;
     padding: 16px;
     background-color: #ccc;
 }
 
 #pager-container ul.pagination > li.active {
     color: white;
-    background-color: black;
+    background-color: #2c89a0;
 }
 
 #pager-container ul.pagination a {

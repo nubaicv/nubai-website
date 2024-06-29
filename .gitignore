@@ -64,3 +64,5 @@ docker-compose.override.yaml
 .web-server-pid
 ###< symfony/framework-bundle ###
 /nbproject/private/
+/mysql_dump/
+
