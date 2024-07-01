@@ -421,5 +421,17 @@
         <target>Próximo</target>
       </segment>
     </unit>
+    <unit id="Q.V6B5F" name="my.cart.page.title">
+      <segment>
+        <source>my.cart.page.title</source>
+        <target>my.cart.page.title</target>
+      </segment>
+    </unit>
+    <unit id="TR1IPrA" name="my.shopping.cart">
+      <segment>
+        <source>my.shopping.cart</source>
+        <target>my.shopping.cart</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
