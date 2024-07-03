@@ -7,6 +7,13 @@
 {% block main %}
     <h1>{% trans %}my.shopping.cart{% endtrans %}</h1>
 
-    {{ dump(data) }}
+    {#
+    {% if product is defined %}
+        {% set images = product.images.getValue() %}
+        <img src="{{ images[0] }}" alt="image">
+    {% endif %}
+    #}
+
+    {{ dump(cart) }}
 
 {% endblock %}

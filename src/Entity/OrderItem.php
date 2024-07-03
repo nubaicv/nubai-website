@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\OrderItemRepository;
@@ -76,6 +78,6 @@ class OrderItem {
      * @return float|int
      */
     public function getTotal(): float {
-        return $this->getProduct()->getPrice() * $this->getQuantity();
+        return $this->getProduct()->getFieldValue('price1') * $this->getQuantity();
     }
 }

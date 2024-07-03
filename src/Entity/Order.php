@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
@@ -116,11 +118,27 @@ class Order {
      * @return $this
      */
     public function removeItems(): self {
-        
+
         foreach ($this->getItems() as $item) {
             $this->removeItem($item);
         }
 
         return $this;
+    }
+
+    /**
+     * Calculates the order total.
+     *
+     * @return float
+     */
+    public function getTotal(): float {
+        
+        $total = 0;
+
+        foreach ($this->getItems() as $item) {
+            $total += $item->getTotal();
+        }
+
+        return $total;
     }
 }
