@@ -6,38 +6,57 @@
 
 {% block main %}
 
-    <div id="product-list-container">
-        {% for product in records %}
-            <article class="w3-mobile">
-
-                <div class="w3-container w3-padding-16">
-                    {% if product|image %}
-                        <a href="{{ product|link }}">
-                            <img src="{{ product|thumbnail(300, 180) }}" alt="{{ product|image.alt|default() }}" />
-                        </a>
-                    {% endif %}
-                    <h4 class=""><a href="{{ product|link }}">{{ product|title }}</a></h4>
-                    <p>{{ product.teaser }}</p>
-                    <span class="w3-red w3-round-small w3-padding-small w3-opacity">{{ product.price1|format_currency('CVE') }}</span>
-                </div>
-
-            </article>
-        {% else %}
-            <article>
-
-                <h2>{{ __('general.phrase.no-content-found') }}</h2>
-                <p>
-                    {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
-                </p>
-
-            </article>
-        {% endfor %}
+    <div class="w3-container blue-nubai">
+        <span><a href="{{ path('homepage_locale') }}"><i class="fa-solid fa-house"></i></a> <i class="fa-solid fa-caret-right"></i> {% trans %}link.to.products.page{% endtrans %}</span>
     </div>
-
-    {% if records is not null %}
-        <div id="pager-container" class="">
-            {{ pager(records, template='partials/_pager.twig') }}
+    <div class="w3-row">
+        <div class="w3-col l2 w3-hide-small w3-hide-medium">
+            {% block asidelarge %}
+                {{ include('partials/_aside.twig') }}
+            {% endblock asidelarge %}
         </div>
-    {% endif %}
+        <div class="w3-col l10">
+
+            <div id="product-list-container">
+                {% for product in records %}
+                    <article class="w3-mobile">
+
+                        <div class="w3-container w3-padding-16">
+                            {% if product|image %}
+                                <a href="{{ product|link }}">
+                                    <img src="{{ product|thumbnail(300, 180) }}" alt="{{ product|image.alt|default() }}" />
+                                </a>
+                            {% endif %}
+                            <h4 class=""><a href="{{ product|link }}">{{ product|title }}</a></h4>
+                            <p>{{ product.teaser }}</p>
+                            <span class="w3-red w3-round-small w3-padding-small w3-opacity">{{ product.price1|format_currency('CVE') }}</span>
+                        </div>
+
+                    </article>
+                {% else %}
+                    <article>
+
+                        <h2>{{ __('general.phrase.no-content-found') }}</h2>
+                        <p>
+                            {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                        </p>
+
+                    </article>
+                {% endfor %}
+            </div>
+
+            {% if records is not null %}
+                <div id="pager-container" class="">
+                    {{ pager(records, template='partials/_pager.twig') }}
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="w3-col w3-hide-large">
+        {% block aside %}
+            {{ include('partials/_aside.twig') }}
+        {% endblock aside %}
+    </div>
 
 {% endblock main %}

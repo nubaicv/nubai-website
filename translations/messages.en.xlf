@@ -427,5 +427,23 @@
         <target>my.shopping.cart</target>
       </segment>
     </unit>
+    <unit id="yhBuFOn" name="link.to.products.page">
+      <segment>
+        <source>link.to.products.page</source>
+        <target>Products</target>
+      </segment>
+    </unit>
+    <unit id="5e0A4SF" name="computadores e hardware">
+      <segment>
+        <source>computadores e hardware</source>
+        <target>computadores e hardware</target>
+      </segment>
+    </unit>
+    <unit id="VqAtW.C" name="alimentos">
+      <segment>
+        <source>alimentos</source>
+        <target>alimentos</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
