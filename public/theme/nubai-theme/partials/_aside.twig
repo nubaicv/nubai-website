@@ -1,9 +1,9 @@
 <!-- Sidebar -->
 <aside>
-    <div class="w3-bar" style="list-style-type: none">
+    <div class="w3-bar blue-nubai">
         {%  for category in config.get('taxonomies/categories/options') %}
             <div class="w3-bar-item">
-                <a href="{{ path('taxonomy_locale', {'taxonomyslug': 'category', 'slug': category|slug }) }}">{{ category|trans }}</a>
+                <a href="{{ path('taxonomy_locale', {'taxonomyslug': 'category', 'slug': category|slug }) }}"><i class="fa-solid fa-caret-right"></i> {{ category|trans }}</a>
             </div>
         {% endfor %}
     </div>

@@ -6,7 +6,9 @@
         <div class="w3-section">
             {% include 'helpers/_languageselect.html.twig' with {'type': 'select', 'class': 'w3-button w3-border w3-border-white'} %}
         </div>
-        <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+        {% if warning is not null %}
+            <span class="w3-text-orange"><p><i class="fa-solid fa-circle-info w3-left w3-margin-right"></i>{{ warning.content }}</p></span>
+        {% endif %}
     </div>
 </footer>
 <!-- End Footer -->

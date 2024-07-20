@@ -4,10 +4,6 @@
 
 {% block main %}
 
-
-    <div class="w3-container blue-nubai">
-        <span><a href="{{ path('homepage_locale') }}"><i class="fa-solid fa-house"></i></a> <i class="fa-solid fa-caret-right"></i> <a href="{{ path('listing_locale', { 'contentTypeSlug': 'products' }) }}">{% trans %}link.to.products.page{% endtrans %}</a> <i class="fa-solid fa-caret-right"></i> {{ product|title }}</span>
-    </div>
     <div class="w3-row">
         <div class="w3-col l2 w3-hide-medium w3-hide-small">
             {% block asidelarge %}
@@ -16,17 +12,46 @@
         </div>
         <div class="w3-col l10">
 
-            <div class="">
-                <div class="w3-cell w3-mobile w3-padding w3-cell-top">
-                    {% if product|image %}
-                        <img src="{{ product|thumbnail(500, 300) }}" alt="{{ product|image.alt|default() }}" />
+            <div class="w3-row">
+                <div class="w3-half w3-mobile w3-padding w3-cell-top w3-display-container">
+                    {% if product.images %}
+                        <div>
+                            {% for image in product.images %}
+                                <img class="mySlides productSlide w3-image" src="{{ image|thumbnail(500, 500) }}">
+                            {% endfor %}
+                            <button class="w3-button blue-nubai-bg w3-text-white w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="w3-button blue-nubai-bg w3-text-white w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
                     {% endif %}
                 </div>
-                <div class="w3-cell w3-mobile w3-padding w3-cell-top">
+                <div class="w3-half w3-mobile w3-padding w3-cell-top">
                     <h1>{{ product|title }}</h1>
                     <p>{{ product.teaser }}</p>
                     <span class="w3-red w3-round-small w3-padding-small w3-opacity">{{ product.price1|format_currency('CVE') }}</span>
                 </div>
+                <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+
+                    function plusDivs(n) {
+                        showDivs(slideIndex += n);
+                    }
+
+                    function showDivs(n) {
+                        var i;
+                        var x = document.getElementsByClassName("mySlides");
+                        if (n > x.length) {
+                            slideIndex = 1
+                        }
+                        if (n < 1) {
+                            slideIndex = x.length
+                        }
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                        x[slideIndex - 1].style.display = "block";
+                    }
+                </script>
             </div>
         </div>
     </div>
