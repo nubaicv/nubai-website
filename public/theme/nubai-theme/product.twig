@@ -13,11 +13,11 @@
         <div class="w3-col l10">
 
             <div class="w3-row">
-                <div class="w3-half w3-mobile w3-padding w3-cell-top w3-display-container">
+                <div class="w3-half w3-mobile w3-padding w3-cell-top w3-display-container w3-center">
                     {% if product.images %}
-                        <div>
+                        <div class="">
                             {% for image in product.images %}
-                                <img class="mySlides productSlide w3-image" src="{{ image|thumbnail(500, 500) }}">
+                                <img class="mySlides productSlide w3-image" src="{{ image }}">
                             {% endfor %}
                             <button class="w3-button blue-nubai-bg w3-text-white w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
                             <button class="w3-button blue-nubai-bg w3-text-white w3-display-right" onclick="plusDivs(1)">&#10095;</button>
@@ -26,8 +26,11 @@
                 </div>
                 <div class="w3-half w3-mobile w3-padding w3-cell-top">
                     <h1>{{ product|title }}</h1>
-                    <p>{{ product.teaser }}</p>
                     <span class="w3-red w3-round-small w3-padding-small w3-opacity">{{ product.price1|format_currency('CVE') }}</span>
+                    <div class="w3-section">
+                        <input type="number" min="1" max="5" value="1" class="w3-padding">
+                        <button class="w3-btn w3-button w3-green w3-padding-16 w3-hover-green w3-mobile">{% trans %}button.add.to.cart{% endtrans %}</button>
+                    </div>
                 </div>
                 <script>
                     var slideIndex = 1;
