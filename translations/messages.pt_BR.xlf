@@ -463,5 +463,11 @@
         <target>adicionar ao carrinho</target>
       </segment>
     </unit>
+    <unit id="BQeX2um" name="electrodomésticos">
+      <segment>
+        <source>electrodomésticos</source>
+        <target>electrodomésticos</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
