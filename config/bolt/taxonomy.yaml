@@ -27,5 +27,5 @@ categories:
     behaves_like: categories
     multiple: false
     listing_template: products.twig
-    options: [ "computadores e hardware", alimentos ]
+    options: [ "computadores e hardware", alimentos, electrodomésticos ]
     required: false

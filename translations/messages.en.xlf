@@ -457,5 +457,11 @@
         <target>add to cart</target>
       </segment>
     </unit>
+    <unit id="BQeX2um" name="electrodomésticos">
+      <segment>
+        <source>electrodomésticos</source>
+        <target>home appliances</target>
+      </segment>
+    </unit>
   </file>
 </xliff>
